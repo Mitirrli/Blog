@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-08T19:44:10&#43;08:00</updated>
+    <updated>2020-10-08T20:00:28&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -28,9 +28,7 @@
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Gitlab版本升级 公司目前gitlab版本是9.5.5,因升级服务器顺道把gitlab也升到最新,这里记录下历程。
-备份Gitlab 1  $ gitlab-rake gitlab:backup:create   执行命令进行备份，将会生成一个命名格式为_gitlab_backup.tar的压缩包
-Gitlab升级 升级历程: 9.5.5 -&amp;gt; 9.5.9 -&amp;gt; 9.5.10 -&amp;gt; 10.8.7 -&amp;gt; 11.11.8 -&amp;gt; 12.0.12 -&amp;gt; 12.10.14 -&amp;gt; 13.0.12 -&amp;gt; 13.2.3 按照官网升级顺序依次升级
-下载deb包(*为版本号) 1  $ wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu/pool/xenial/main/g/gitlab-ce/gitlab-ce_*-ce.0_amd64.deb   安装deb包 1  $ dpkg -i *.</summary>
+备份Gitlab 1  $ gitlab-rake gitlab:backup:create   执行命令进行备份，将会生成一个命名格式为_gitlab_backup.</summary>
             
                 <content type="html">&lt;h2 id=&#34;gitlab版本升级&#34;&gt;Gitlab版本升级&lt;/h2&gt;
 &lt;p&gt;公司目前gitlab版本是9.5.5,因升级服务器顺道把gitlab也升到最新,这里记录下历程。&lt;/p&gt;
