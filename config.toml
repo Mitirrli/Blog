@@ -23,7 +23,7 @@ defaultContentLanguageInSubdir = false
 pluralizeListTitles = false
 
 # The length of text in words to show in summary
-summaryLength = 42
+summaryLength = 6
 
 # Enable Emoji emoticons support?
 enableEmoji = true
@@ -347,7 +347,7 @@ uglyURLs = false
     # ATTENTION: keep this format, change
     #            the number
 
-    siteTwitter = "reuixiy"
+    siteTwitter = "mitirrli"
     # Note: used for Twitter Cards
 
 
