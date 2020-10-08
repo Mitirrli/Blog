@@ -1,7 +1,9 @@
 ---
 title: "Php Command Script"
 date: 2020-10-08T10:20:58+08:00
-draft: true
+draft: flase
+tags: ["script", "php"]
+categories: ["php"]
 ---
 
 # 有用的php命令行命令

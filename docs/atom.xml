@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-08T15:42:03&#43;08:00</updated>
+    <updated>2020-10-08T15:52:05&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -146,7 +146,29 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/script/" term="script" label="script" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
                     
                 
             

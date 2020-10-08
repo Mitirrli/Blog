@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 08 Oct 2020 15:42:03 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 08 Oct 2020 15:52:05 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -155,7 +155,29 @@
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                
+                            
+                        
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://mitirrli.github.io/blog/tags/script/">script</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                
+                            
                         
                     
                 

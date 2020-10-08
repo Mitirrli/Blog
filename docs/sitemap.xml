@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mitirrli.github.io/blog/categories/</loc>
+    <lastmod>2020-10-08T15:33:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/blog/</loc>
     <lastmod>2020-10-08T15:33:46+08:00</lastmod>
   </url>
@@ -13,16 +18,28 @@
   </url>
   
   <url>
+    <loc>https://mitirrli.github.io/blog/tags/php/</loc>
+    <lastmod>2020-10-08T15:33:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/php/</loc>
+    <lastmod>2020-10-08T15:33:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/blog/php/script/</loc>
     <lastmod>2020-10-08T15:33:46+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/blog/categories/</loc>
+    <loc>https://mitirrli.github.io/blog/tags/script/</loc>
+    <lastmod>2020-10-08T15:33:46+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/</loc>
+    <lastmod>2020-10-08T15:33:46+08:00</lastmod>
   </url>
   
 </urlset>
