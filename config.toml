@@ -1,0 +1,5 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Mitirrli Site"
+theme = "ananke"
+publishDir = "docs"
