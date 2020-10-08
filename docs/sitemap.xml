@@ -3,11 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mitirrli.github.io/blog/categories/</loc>
+    <loc>https://mitirrli.github.io/blog/</loc>
+    <lastmod>2020-10-08T15:12:35+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/blog/</loc>
+    <loc>https://mitirrli.github.io/blog/php/</loc>
+    <lastmod>2020-10-08T15:12:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/test/</loc>
+    <lastmod>2020-10-08T15:12:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/build-query/</loc>
+    <lastmod>2020-10-08T14:53:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/</loc>
   </url>
   
   <url>

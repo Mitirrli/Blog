@@ -23,10 +23,59 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 08 Oct 2020 15:13:00 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 08 Oct 2020 15:16:27 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
+        
+            <item>
+                <title>Test</title>
+                <link>https://mitirrli.github.io/blog/php/test/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/test/</guid>
+                <pubDate>Thu, 08 Oct 2020 15:12:03 &#43;0800</pubDate>
+                
+                    <author>phper.blue@gmail.com (mitirrli)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Build Query</title>
+                <link>https://mitirrli.github.io/blog/php/build-query/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/build-query/</guid>
+                <pubDate>Thu, 08 Oct 2020 10:20:58 &#43;0800</pubDate>
+                
+                    <author>phper.blue@gmail.com (mitirrli)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;test for build query&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
     </channel>
 </rss>
