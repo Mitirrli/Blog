@@ -1,6 +1,6 @@
 ---
 title: "Php Command Script"
-date: 2020-10-08T10:20:58+08:00
+date: 2018-10-08T10:20:58+08:00
 draft: flase
 tags: ["script", "php"]
 categories: ["php"]
