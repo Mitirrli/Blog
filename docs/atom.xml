@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-10T20:50:11&#43;08:00</updated>
+    <updated>2020-10-10T20:56:58&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -17,10 +17,10 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.76.2">Hugo</generator>
         <entry>
-            <title type="text">php部分时间函数</title>
+            <title type="text">Php 部分时间函数</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/time/" />
             <id>https://mitirrli.github.io/blog/php/time/</id>
-            <updated>2020-10-10T20:49:56&#43;08:00</updated>
+            <updated>2020-10-10T20:56:48&#43;08:00</updated>
             <published>2019-09-17T20:47:37&#43;08:00</published>
             <author>
                     <name>mitirrli</name>

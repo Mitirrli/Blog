@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Sat, 10 Oct 2020 20:50:11 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 10 Oct 2020 20:56:58 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
         
             <item>
-                <title>php部分时间函数</title>
+                <title>Php 部分时间函数</title>
                 <link>https://mitirrli.github.io/blog/php/time/</link>
                 <guid isPermaLink="true">https://mitirrli.github.io/blog/php/time/</guid>
                 <pubDate>Tue, 17 Sep 2019 20:47:37 &#43;0800</pubDate>
