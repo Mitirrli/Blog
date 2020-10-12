@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-13T07:34:52&#43;08:00</updated>
+    <updated>2020-10-13T07:35:26&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Php Fpm 和 Nginx</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm/" />
             <id>https://mitirrli.github.io/blog/php/php-fpm/</id>
-            <updated>2020-10-13T07:34:36&#43;08:00</updated>
+            <updated>2020-10-13T07:35:20&#43;08:00</updated>
             <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -267,6 +267,12 @@ $ nginx -s reload
                             
                             
                                 <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/nginx/" term="nginx" label="nginx" />
                             
                         
                     
