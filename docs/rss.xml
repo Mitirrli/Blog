@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 13 Oct 2020 07:35:26 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 13 Oct 2020 07:44:46 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -41,7 +41,7 @@
                     <description>&lt;blockquote&gt;
 &lt;p&gt;nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;为了防止破坏我们本机的环境我们搭建一个ubuntu的docker环境&#34;&gt;为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境&lt;/h3&gt;
+&lt;h2 id=&#34;为了防止破坏我们本机的环境我们搭建一个ubuntu的docker环境&#34;&gt;为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境&lt;/h2&gt;
 &lt;h4 id=&#34;1-安装nginx&#34;&gt;1. 安装nginx&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -167,7 +167,7 @@ $ vim /opt/index.php
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ chown www-data:www-data /tmp/index.php
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;5-nginx创建一个配置文件&#34;&gt;5. nginx创建一个配置文件&lt;/h4&gt;
+&lt;/div&gt;&lt;h4 id=&#34;6-nginx创建一个配置文件&#34;&gt;6. nginx创建一个配置文件&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -235,7 +235,7 @@ $ vim /opt/index.php
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ nginx -c /etc/nginx/nginx.conf
 
-$ nginx -s reload
+$ nginx -s reload //reload会重新加载配置文件
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -281,6 +281,12 @@ $ nginx -s reload
                                 
                                 
                                     <category domain="https://mitirrli.github.io/blog/tags/nginx/">nginx</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://mitirrli.github.io/blog/tags/docker/">docker</category>
                                 
                             
                         
