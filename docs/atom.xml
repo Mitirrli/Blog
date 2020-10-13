@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-13T16:44:51&#43;08:00</updated>
+    <updated>2020-10-13T21:01:26&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Php Fpm 和 Nginx</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm/" />
             <id>https://mitirrli.github.io/blog/php/php-fpm/</id>
-            <updated>2020-10-13T16:42:37&#43;08:00</updated>
+            <updated>2020-10-13T20:57:37&#43;08:00</updated>
             <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -125,6 +125,7 @@ $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0bet
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
@@ -132,6 +133,7 @@ $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0bet
 
 $ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.conf
 // 修改 &lt;span class=&#34;nv&#34;&gt;pid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; run/php-fpm.pid
+// 修改 &lt;span class=&#34;nv&#34;&gt;error_log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; log/php-fpm.log
 
 $ mkdir -p /var/run/php-fpm &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch /var/run/php-fpm/php8-fpm.sock //创建socket文件
 
