@@ -28,7 +28,7 @@
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" /></noscript>
 
     <meta name="author" content="mitirrli" /><meta name="description" content="nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx
- 为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境 1. 安装nginx 1  $ apt-get update &amp;&amp; apt install nginx   2." />
+ 为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境 1. 编译安装php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  $ docker pull ubuntu:latest $ docker run --name ubuntu -p 6767:80 -d ubuntu /bin/bash -c &#34;while true; do echo 1; sleep 1; done&#34; $ docker exec -it ubuntu bash //进入容器 $ cd /tmp $ apt-get update &amp;&amp; apt install wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool $ wget -c https://downloads." />
 
     <link rel="shortcut icon" href="/blog/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -55,13 +55,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-10-06T12:49:27+08:00",
-        "dateModified": "2020-10-13T07:44:43+08:00",
+        "dateModified": "2020-10-13T10:07:19+08:00",
         "url": "https://mitirrli.github.io/blog/php/php-fpm/",
         "headline": "Php Fpm 和 Nginx",
-        "description": "nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx\n 为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境 1. 安装nginx 1  $ apt-get update \u0026\u0026 apt install nginx   2.",
+        "description": "nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx\n 为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境 1. 编译安装php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  $ docker pull ubuntu:latest $ docker run --name ubuntu -p 6767:80 -d ubuntu /bin/bash -c \"while true; do echo 1; sleep 1; done\" $ docker exec -it ubuntu bash //进入容器 $ cd /tmp $ apt-get update \u0026\u0026 apt install wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool $ wget -c https://downloads.",
         "inLanguage" : "en",
         "articleSection": "php",
-        "wordCount":  273 ,
+        "wordCount":  291 ,
         "image": "https://mitirrli.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -100,13 +100,13 @@
 
 <meta property="og:title" content="Php Fpm 和 Nginx" />
 <meta property="og:description" content="nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx
- 为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境 1. 安装nginx 1  $ apt-get update &amp;&amp; apt install nginx   2." />
+ 为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境 1. 编译安装php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  $ docker pull ubuntu:latest $ docker run --name ubuntu -p 6767:80 -d ubuntu /bin/bash -c &#34;while true; do echo 1; sleep 1; done&#34; $ docker exec -it ubuntu bash //进入容器 $ cd /tmp $ apt-get update &amp;&amp; apt install wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool $ wget -c https://downloads." />
 <meta property="og:url" content="https://mitirrli.github.io/blog/php/php-fpm/" />
 <meta property="og:site_name" content="Mitirrli" />
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://mitirrli.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-10-06T12:49:27&#43;08:00" />
-    <meta property="article:modified_time" content="2020-10-13T07:44:43&#43;08:00" />
+    <meta property="article:modified_time" content="2020-10-13T10:07:19&#43;08:00" />
     
     <meta property="article:section" content="php" />
 
@@ -261,7 +261,7 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;273</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;291</span>
     
     
         
@@ -278,16 +278,7 @@
 <p style="text-indent:0"><span class="drop-cap">n</span>ginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx</p>
 </blockquote>
 <h2 id="为了防止破坏我们本机的环境我们搭建一个ubuntu的docker环境"><a href="#为了防止破坏我们本机的环境我们搭建一个ubuntu的docker环境" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>为了防止破坏我们本机的环境,我们搭建一个ubuntu的docker环境</h2>
-<h4 id="1-安装nginx"><a href="#1-安装nginx" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1. 安装nginx</h4>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ apt-get update <span class="o">&amp;&amp;</span> apt install nginx
-</code></pre></td></tr></table></div>
-</div>
-</div><h4 id="2-编译安装php"><a href="#2-编译安装php" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>2. 编译安装php</h4>
+<h4 id="1-编译安装php"><a href="#1-编译安装php" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1. 编译安装php</h4>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -315,13 +306,13 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ docker pull ubuntu:latest
 
-$ docker run --name ubuntu -d ubuntu /bin/bash -c <span class="s2">&#34;while true; do echo 1; sleep 1; done&#34;</span>
+$ docker run --name ubuntu -p 6767:80 -d ubuntu /bin/bash -c <span class="s2">&#34;while true; do echo 1; sleep 1; done&#34;</span>
 
 $ docker <span class="nb">exec</span> -it ubuntu bash //进入容器
 
 $ <span class="nb">cd</span> /tmp
 
-$ apt-get update <span class="o">&amp;&amp;</span> apt install wget vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool
+$ apt-get update <span class="o">&amp;&amp;</span> apt install wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool
 
 $ wget -c https://downloads.php.net/~carusogabriel/php-8.0.0beta3.tar.gz //我这边直接安装当前最新版
 
@@ -336,7 +327,7 @@ $ make //编译,这一步需要比较长的时间<span class="o">(</span>之后s
 $ make install //安装<span class="o">(</span>make install后可以执行<span class="nv">$prefix</span>/bin/php<span class="o">)</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><h4 id="3-重命名配置文件"><a href="#3-重命名配置文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>3. 重命名配置文件</h4>
+</div><h4 id="2-重命名配置文件"><a href="#2-重命名配置文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>2. 重命名配置文件</h4>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -351,6 +342,15 @@ $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.conf.default /tmp/php-8.0.0beta3/out
 $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
 </code></pre></td></tr></table></div>
 </div>
+</div><h4 id="3-安装nginx"><a href="#3-安装nginx" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>3. 安装nginx</h4>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ apt install nginx
+</code></pre></td></tr></table></div>
+</div>
 </div><h4 id="4-使用unix套接字通讯"><a href="#4-使用unix套接字通讯" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>4. 使用unix套接字通讯</h4>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
@@ -360,14 +360,18 @@ $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0bet
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
 // 修改 <span class="nv">listen</span> <span class="o">=</span> /var/run/php-fpm/php8-fpm.sock
 
-$ mkdir -p /var/run/php-fpm <span class="o">&amp;&amp;</span> touch /var/run/php-fpm/php8-fpm.sock <span class="o">&amp;&amp;</span> chown -R www-data:www-data /var/run/php-fpm/php8-fpm.sock //创建socket文件
+$ mkdir -p /var/run/php-fpm <span class="o">&amp;&amp;</span> touch /var/run/php-fpm/php8-fpm.sock //创建socket文件
 
 $ /tmp/php-8.0.0beta3/output/sbin/php-fpm -D //启动php-fpm
+
+$ ps -ef <span class="p">|</span> grep php-fpm //这样已经可以看到对应的php-fpm进程了
 </code></pre></td></tr></table></div>
 </div>
 </div><h4 id="5-创建一个php文件"><a href="#5-创建一个php文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>5. 创建一个php文件</h4>
@@ -400,7 +404,7 @@ $ vim /opt/index.php
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ chown www-data:www-data /tmp/index.php
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ chown www-data:www-data /opt/index.php
 </code></pre></td></tr></table></div>
 </div>
 </div><h4 id="6-nginx创建一个配置文件"><a href="#6-nginx创建一个配置文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>6. nginx创建一个配置文件</h4>
@@ -467,9 +471,13 @@ $ vim /opt/index.php
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ nginx -c /etc/nginx/nginx.conf
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ systemctl stop nginx
+
+$ nginx -c /etc/nginx/nginx.conf
 
 $ nginx -s reload //reload会重新加载配置文件
 </code></pre></td></tr></table></div>
@@ -477,9 +485,13 @@ $ nginx -s reload //reload会重新加载配置文件
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ curl 127.0.0.1 //可以看到成功结果
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ chown -R www-data:www-data /var/run/php-fpm/php8-fpm.sock //赋予权限
+
+$ curl 127.0.0.1 //在容器中执行本命令可以看到成功结果,容器外访问http://127.0.0.1:6767/可以查看对应详情
 </code></pre></td></tr></table></div>
 </div>
 </div>
@@ -510,7 +522,7 @@ $ nginx -s reload //reload会重新加载配置文件
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-10-13 07:44:43 CST" style="cursor:help">
+        <span title="Updated @ 2020-10-13 10:07:19 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-10-13</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-10-13</text></g></svg>
         </span></div>
@@ -543,7 +555,7 @@ $ nginx -s reload //reload会重新加载配置文件
             
                 <div class="share-item linkedin">
                     
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mitirrli.github.io/blog/php/php-fpm/&amp;title=Php%20Fpm%20%e5%92%8c%20Nginx&amp;summary=nginx%e6%9c%ac%e8%ba%ab%e4%b8%8d%e8%83%bd%e5%a4%84%e7%90%86php,%e5%bd%93%e6%94%b6%e5%88%b0%e8%af%b7%e6%b1%82%e5%90%8e,%e5%a6%82%e6%9e%9c%e6%98%afphp%e8%af%b7%e6%b1%82,%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad,%e4%bb%96%e5%b0%86%e8%af%b7%e6%b1%82%e5%8f%91%e9%80%81%e7%bb%99fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86,fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e4%bc%9a%e9%80%89%e6%8b%a9%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86%e5%ae%8c%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%e7%bb%99nginx%0a%20%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e7%a0%b4%e5%9d%8f%e6%88%91%e4%bb%ac%e6%9c%ac%e6%9c%ba%e7%9a%84%e7%8e%af%e5%a2%83,%e6%88%91%e4%bb%ac%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aaubuntu%e7%9a%84docker%e7%8e%af%e5%a2%83%201.%20%e5%ae%89%e8%a3%85nginx%201%20%20$%20apt-get%20update%20&amp;&amp;%20apt%20install%20nginx%20%20%202.&amp;source=Mitirrli" title="Share on LinkedIn" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mitirrli.github.io/blog/php/php-fpm/&amp;title=Php%20Fpm%20%e5%92%8c%20Nginx&amp;summary=nginx%e6%9c%ac%e8%ba%ab%e4%b8%8d%e8%83%bd%e5%a4%84%e7%90%86php,%e5%bd%93%e6%94%b6%e5%88%b0%e8%af%b7%e6%b1%82%e5%90%8e,%e5%a6%82%e6%9e%9c%e6%98%afphp%e8%af%b7%e6%b1%82,%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad,%e4%bb%96%e5%b0%86%e8%af%b7%e6%b1%82%e5%8f%91%e9%80%81%e7%bb%99fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86,fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e4%bc%9a%e9%80%89%e6%8b%a9%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86%e5%ae%8c%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%e7%bb%99nginx%0a%20%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e7%a0%b4%e5%9d%8f%e6%88%91%e4%bb%ac%e6%9c%ac%e6%9c%ba%e7%9a%84%e7%8e%af%e5%a2%83,%e6%88%91%e4%bb%ac%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aaubuntu%e7%9a%84docker%e7%8e%af%e5%a2%83%201.%20%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85php%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20%20$%20docker%20pull%20ubuntu:latest%20$%20docker%20run%20--name%20ubuntu%20-p%206767:80%20-d%20ubuntu%20/bin/bash%20-c%20%22while%20true;%20do%20echo%201;%20sleep%201;%20done%22%20$%20docker%20exec%20-it%20ubuntu%20bash%20//%e8%bf%9b%e5%85%a5%e5%ae%b9%e5%99%a8%20$%20cd%20/tmp%20$%20apt-get%20update%20&amp;&amp;%20apt%20install%20wget%20curl%20vim%20gcc%20pkg-config%20systemctl%20make%20libxml2-dev%20libsqlite3-dev%20//%e4%b8%8b%e8%bd%bd%e4%b9%8b%e5%90%8e%e9%9c%80%e8%a6%81%e7%9a%84%e4%b8%80%e4%ba%9btool%20$%20wget%20-c%20https://downloads.&amp;source=Mitirrli" title="Share on LinkedIn" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
                 </div>
             
 
@@ -564,14 +576,14 @@ $ nginx -s reload //reload会重新加载配置文件
             
                 <div class="share-item douban">
                     
-                    <a href="https://www.douban.com/share/service?href=https://mitirrli.github.io/blog/php/php-fpm/&amp;name=Php%20Fpm%20%e5%92%8c%20Nginx&amp;text=nginx%e6%9c%ac%e8%ba%ab%e4%b8%8d%e8%83%bd%e5%a4%84%e7%90%86php,%e5%bd%93%e6%94%b6%e5%88%b0%e8%af%b7%e6%b1%82%e5%90%8e,%e5%a6%82%e6%9e%9c%e6%98%afphp%e8%af%b7%e6%b1%82,%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad,%e4%bb%96%e5%b0%86%e8%af%b7%e6%b1%82%e5%8f%91%e9%80%81%e7%bb%99fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86,fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e4%bc%9a%e9%80%89%e6%8b%a9%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86%e5%ae%8c%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%e7%bb%99nginx%0a%20%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e7%a0%b4%e5%9d%8f%e6%88%91%e4%bb%ac%e6%9c%ac%e6%9c%ba%e7%9a%84%e7%8e%af%e5%a2%83,%e6%88%91%e4%bb%ac%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aaubuntu%e7%9a%84docker%e7%8e%af%e5%a2%83%201.%20%e5%ae%89%e8%a3%85nginx%201%20%20$%20apt-get%20update%20&amp;&amp;%20apt%20install%20nginx%20%20%202." title="Share on Douban" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon douban-icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412l-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 01-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03Z"/></svg></a>
+                    <a href="https://www.douban.com/share/service?href=https://mitirrli.github.io/blog/php/php-fpm/&amp;name=Php%20Fpm%20%e5%92%8c%20Nginx&amp;text=nginx%e6%9c%ac%e8%ba%ab%e4%b8%8d%e8%83%bd%e5%a4%84%e7%90%86php,%e5%bd%93%e6%94%b6%e5%88%b0%e8%af%b7%e6%b1%82%e5%90%8e,%e5%a6%82%e6%9e%9c%e6%98%afphp%e8%af%b7%e6%b1%82,%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad,%e4%bb%96%e5%b0%86%e8%af%b7%e6%b1%82%e5%8f%91%e9%80%81%e7%bb%99fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86,fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e4%bc%9a%e9%80%89%e6%8b%a9%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86%e5%ae%8c%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%e7%bb%99nginx%0a%20%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e7%a0%b4%e5%9d%8f%e6%88%91%e4%bb%ac%e6%9c%ac%e6%9c%ba%e7%9a%84%e7%8e%af%e5%a2%83,%e6%88%91%e4%bb%ac%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aaubuntu%e7%9a%84docker%e7%8e%af%e5%a2%83%201.%20%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85php%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20%20$%20docker%20pull%20ubuntu:latest%20$%20docker%20run%20--name%20ubuntu%20-p%206767:80%20-d%20ubuntu%20/bin/bash%20-c%20%22while%20true;%20do%20echo%201;%20sleep%201;%20done%22%20$%20docker%20exec%20-it%20ubuntu%20bash%20//%e8%bf%9b%e5%85%a5%e5%ae%b9%e5%99%a8%20$%20cd%20/tmp%20$%20apt-get%20update%20&amp;&amp;%20apt%20install%20wget%20curl%20vim%20gcc%20pkg-config%20systemctl%20make%20libxml2-dev%20libsqlite3-dev%20//%e4%b8%8b%e8%bd%bd%e4%b9%8b%e5%90%8e%e9%9c%80%e8%a6%81%e7%9a%84%e4%b8%80%e4%ba%9btool%20$%20wget%20-c%20https://downloads." title="Share on Douban" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon douban-icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412l-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 01-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03Z"/></svg></a>
                 </div>
             
 
             
                 <div class="share-item qq">
                     
-                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://mitirrli.github.io/blog/php/php-fpm/&amp;title=Php%20Fpm%20%e5%92%8c%20Nginx&amp;summary=nginx%e6%9c%ac%e8%ba%ab%e4%b8%8d%e8%83%bd%e5%a4%84%e7%90%86php,%e5%bd%93%e6%94%b6%e5%88%b0%e8%af%b7%e6%b1%82%e5%90%8e,%e5%a6%82%e6%9e%9c%e6%98%afphp%e8%af%b7%e6%b1%82,%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad,%e4%bb%96%e5%b0%86%e8%af%b7%e6%b1%82%e5%8f%91%e9%80%81%e7%bb%99fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86,fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e4%bc%9a%e9%80%89%e6%8b%a9%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86%e5%ae%8c%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%e7%bb%99nginx%0a%20%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e7%a0%b4%e5%9d%8f%e6%88%91%e4%bb%ac%e6%9c%ac%e6%9c%ba%e7%9a%84%e7%8e%af%e5%a2%83,%e6%88%91%e4%bb%ac%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aaubuntu%e7%9a%84docker%e7%8e%af%e5%a2%83%201.%20%e5%ae%89%e8%a3%85nginx%201%20%20$%20apt-get%20update%20&amp;&amp;%20apt%20install%20nginx%20%20%202.&amp;pics=https://mitirrli.github.io/icons/apple-touch-icon.png&amp;site=Mitirrli" title="Share on QQ" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
+                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://mitirrli.github.io/blog/php/php-fpm/&amp;title=Php%20Fpm%20%e5%92%8c%20Nginx&amp;summary=nginx%e6%9c%ac%e8%ba%ab%e4%b8%8d%e8%83%bd%e5%a4%84%e7%90%86php,%e5%bd%93%e6%94%b6%e5%88%b0%e8%af%b7%e6%b1%82%e5%90%8e,%e5%a6%82%e6%9e%9c%e6%98%afphp%e8%af%b7%e6%b1%82,%e5%9c%a8%e6%9c%ac%e6%96%87%e4%b8%ad,%e4%bb%96%e5%b0%86%e8%af%b7%e6%b1%82%e5%8f%91%e9%80%81%e7%bb%99fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86,fastcgi%e7%ae%a1%e7%90%86%e8%bf%9b%e7%a8%8b%e4%bc%9a%e9%80%89%e6%8b%a9%e5%ad%90%e8%bf%9b%e7%a8%8b%e5%a4%84%e7%90%86%e5%ae%8c%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%e7%bb%99nginx%0a%20%e4%b8%ba%e4%ba%86%e9%98%b2%e6%ad%a2%e7%a0%b4%e5%9d%8f%e6%88%91%e4%bb%ac%e6%9c%ac%e6%9c%ba%e7%9a%84%e7%8e%af%e5%a2%83,%e6%88%91%e4%bb%ac%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aaubuntu%e7%9a%84docker%e7%8e%af%e5%a2%83%201.%20%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85php%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%2021%20%20$%20docker%20pull%20ubuntu:latest%20$%20docker%20run%20--name%20ubuntu%20-p%206767:80%20-d%20ubuntu%20/bin/bash%20-c%20%22while%20true;%20do%20echo%201;%20sleep%201;%20done%22%20$%20docker%20exec%20-it%20ubuntu%20bash%20//%e8%bf%9b%e5%85%a5%e5%ae%b9%e5%99%a8%20$%20cd%20/tmp%20$%20apt-get%20update%20&amp;&amp;%20apt%20install%20wget%20curl%20vim%20gcc%20pkg-config%20systemctl%20make%20libxml2-dev%20libsqlite3-dev%20//%e4%b8%8b%e8%bd%bd%e4%b9%8b%e5%90%8e%e9%9c%80%e8%a6%81%e7%9a%84%e4%b8%80%e4%ba%9btool%20$%20wget%20-c%20https://downloads.&amp;pics=https://mitirrli.github.io/icons/apple-touch-icon.png&amp;site=Mitirrli" title="Share on QQ" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
                 </div>
             
 
