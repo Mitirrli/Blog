@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-13T13:49:56&#43;08:00</updated>
+    <updated>2020-10-13T16:44:51&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Php Fpm 和 Nginx</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm/" />
             <id>https://mitirrli.github.io/blog/php/php-fpm/</id>
-            <updated>2020-10-13T13:47:02&#43;08:00</updated>
+            <updated>2020-10-13T16:42:37&#43;08:00</updated>
             <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -28,7 +28,7 @@
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx
- 为了不破坏本机的环境,搭建一个ubuntu的docker环境 1. 编译安装php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  $ docker pull ubuntu:latest $ docker run --name ubuntu -p 6767:80 -d ubuntu /bin/bash -c &amp;#34;while true; do echo 1; sleep 1; done&amp;#34; $ docker exec -it ubuntu bash //进入容器 $ cd /tmp $ apt-get update &amp;amp;&amp;amp; apt install wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool $ wget -c https://downloads.</summary>
+ 为了不破坏本机的环境,搭建一个ubuntu的docker环境 1. 编译安装php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  $ docker pull ubuntu:latest $ docker run --name ubuntu --cap-add=SYS_PTRACE -p 6767:80 -d ubuntu /bin/bash -c &amp;#34;while true; do echo 1; sleep 1; done&amp;#34; $ docker exec -it ubuntu bash //进入容器 $ cd /tmp $ sed -i &amp;#39;s/archive.</summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;nginx本身不能处理php,当收到请求后,如果是php请求,在本文中,他将请求发送给fastcgi管理进程处理,fastcgi管理进程会选择子进程处理完返回结果给nginx&lt;/p&gt;
@@ -58,17 +58,21 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ docker pull ubuntu:latest
 
-$ docker run --name ubuntu -p 6767:80 -d ubuntu /bin/bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;while true; do echo 1; sleep 1; done&amp;#34;&lt;/span&gt;
+$ docker run --name ubuntu --cap-add&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;SYS_PTRACE -p 6767:80 -d ubuntu /bin/bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;while true; do echo 1; sleep 1; done&amp;#34;&lt;/span&gt;
 
 $ docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it ubuntu bash //进入容器
 
 $ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp
 
-$ apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool
+$ sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&amp;#39;&lt;/span&gt; /etc/apt/sources.list //使用国内镜像
+
+$ apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install -y wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool
 
 $ wget -c https://downloads.php.net/~carusogabriel/php-8.0.0beta3.tar.gz //我这边直接安装当前最新版
 
@@ -104,28 +108,34 @@ $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0bet
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ apt install nginx
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ apt install -y nginx
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;4-使用unix套接字通讯&#34;&gt;4. 使用unix套接字通讯&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
 // 修改 &lt;span class=&#34;nv&#34;&gt;listen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; /var/run/php-fpm/php8-fpm.sock
 
+$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.conf
+// 修改 &lt;span class=&#34;nv&#34;&gt;pid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; run/php-fpm.pid
+
 $ mkdir -p /var/run/php-fpm &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch /var/run/php-fpm/php8-fpm.sock //创建socket文件
 
-$ /tmp/php-8.0.0beta3/output/sbin/php-fpm -D //启动php-fpm
+$ /tmp/php-8.0.0beta3/output/sbin/php-fpm -R //启动php-fpm
 
 $ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //这样已经可以看到对应的php-fpm进程了
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
@@ -248,6 +258,99 @@ $ nginx -s reload //reload会重新加载配置文件
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ chown -R www-data:www-data /var/run/php-fpm/php8-fpm.sock //赋予权限
 
 $ curl 127.0.0.1 //在容器中执行本命令可以看到成功结果,容器外访问http://127.0.0.1:6767/可以查看对应详情
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;7-slow-log&#34;&gt;7. slow log&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/php-8.0.0beta3/output &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir log &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chown -R www-data:www-data log
+
+&lt;span class=&#34;c1&#34;&gt;# 慢日志目录在 /tmp/php-8.0.0beta3/output/log&lt;/span&gt;
+
+$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf //打开慢日志开关
+
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; The log file &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; slow requests
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; Default Value: not &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; Note: slowlog is mandatory &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; request_slowlog_timeout is &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;slowlog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; log/&lt;span class=&#34;nv&#34;&gt;$pool&lt;/span&gt;.log.slow
+
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; The timeout &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; serving a single request after which a PHP backtrace will be
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; dumped to the &lt;span class=&#34;s1&#34;&gt;&amp;#39;slowlog&amp;#39;&lt;/span&gt; file. A value of &lt;span class=&#34;s1&#34;&gt;&amp;#39;0s&amp;#39;&lt;/span&gt; means &lt;span class=&#34;s1&#34;&gt;&amp;#39;off&amp;#39;&lt;/span&gt;.
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; Available units: s&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;econds&lt;span class=&#34;o&#34;&gt;)(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, m&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;inutes&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, h&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ours&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, or d&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ays&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; Default Value: &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;request_slowlog_timeout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 1s
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://caihongtengxu.github.io/2019/20190516/index.html&#34;&gt;PHP-FPM可以创建慢日志文件，但是却不能给慢日志文件写入内容&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;8-配置php-fpm&#34;&gt;8. 配置php-fpm&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //可以看到目前有1个Fastcgi进程管理器和2个Fastcgi子进程
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf //修改配置文件
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;; The number of child processes created on startup.
+; Note: Used only when pm is set to &amp;#39;dynamic&amp;#39;
+; Default Value: (min_spare_servers + max_spare_servers) / 2
+pm.start_servers = 4
+
+; The desired maximum number of idle server processes.
+; Note: Used only when pm is set to &amp;#39;dynamic&amp;#39;
+; Note: Mandatory when pm is set to &amp;#39;dynamic&amp;#39;
+pm.max_spare_servers = 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;kill&lt;/span&gt; -USR2 &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;cat /tmp/php-8.0.0beta3/output/var/run/php-fpm.pid&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt; //重启php-fpm
+
+$ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //可以看到目前有1个Fastcgi进程管理器和4个Fastcgi子进程
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
