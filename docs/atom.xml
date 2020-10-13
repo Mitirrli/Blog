@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-13T22:26:59&#43;08:00</updated>
+    <updated>2020-10-13T22:28:43&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Php Fpm 和 Nginx</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm/" />
             <id>https://mitirrli.github.io/blog/php/php-fpm/</id>
-            <updated>2020-10-13T22:26:27&#43;08:00</updated>
+            <updated>2020-10-13T22:28:36&#43;08:00</updated>
             <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -114,7 +114,7 @@ FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多
 FastCGI 子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。在CGI模式中，php-cgi在此便退出了
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6844903725102792718&#34;&gt;上述绝大部分引用自此文&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6844903725102792718&#34;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-编译安装php&#34;&gt;2. 编译安装php&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 13 Oct 2020 22:26:59 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 13 Oct 2020 22:28:43 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -122,7 +122,7 @@ FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多
 FastCGI 子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。在CGI模式中，php-cgi在此便退出了
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6844903725102792718&#34;&gt;上述绝大部分引用自此文&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6844903725102792718&#34;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-编译安装php&#34;&gt;2. 编译安装php&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
