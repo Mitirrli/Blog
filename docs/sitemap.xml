@@ -4,17 +4,17 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-10-14T07:47:16+08:00</lastmod>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/docker/</loc>
-    <lastmod>2020-10-13T22:28:36+08:00</lastmod>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-10-14T07:47:16+08:00</lastmod>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
   </url>
   
   <url>
@@ -49,7 +49,27 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-10-14T07:47:16+08:00</lastmod>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/docker/</loc>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/docker/</loc>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/docker/docker-vscode/</loc>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/vscode/</loc>
+    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
   </url>
   
   <url>
@@ -70,16 +90,6 @@
   <url>
     <loc>https://mitirrli.github.io/blog/gitlab/update/</loc>
     <lastmod>2020-10-08T19:37:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/docker/</loc>
-    <lastmod>2020-10-11T22:39:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/categories/docker/</loc>
-    <lastmod>2020-10-11T22:39:02+08:00</lastmod>
   </url>
   
   <url>
