@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 15 Oct 2020 23:33:23 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 16 Oct 2020 08:12:12 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -609,22 +609,16 @@ $ ./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/tmp/php-8.0.0
 
 $ make //编译,这一步需要比较长的时间&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;之后sapi/cli目录里就已经有了php的可执行文件&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 
-$ make install //安装&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;make install后可以执行&lt;span class=&#34;nv&#34;&gt;$prefix&lt;/span&gt;/bin/php&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+$ make install //安装&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;make install后可以执行&lt;span class=&#34;nv&#34;&gt;$prefix&lt;/span&gt;/bin/php,此时在/tmp/php-8.0.0beta3/output/sbin目录下已经有了php-fpm的可执行文件&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;3-重命名配置文件&#34;&gt;3. 重命名配置文件&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 此时在/tmp/php-8.0.0beta3/output/sbin目录下已经有了php-fpm的可执行文件&lt;/span&gt;
-
-$ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.conf
-$ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.conf &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;4-安装nginx&#34;&gt;4. 安装nginx&lt;/h4&gt;
@@ -660,13 +654,13 @@ $ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0bet
 
 $ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
 // 修改 &lt;span class=&#34;nv&#34;&gt;listen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; /var/run/php-fpm/php8-fpm.sock
-// 修改 listen.owner &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
-// 修改 listen.group &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
-// 修改 listen.mode &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0660&lt;/span&gt;
+// 打开注释 listen.owner &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
+// 打开注释 listen.group &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
+// 打开注释 listen.mode &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0660&lt;/span&gt;
 
 $ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.conf
-// 修改 &lt;span class=&#34;nv&#34;&gt;pid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; run/php-fpm.pid
-// 修改 &lt;span class=&#34;nv&#34;&gt;error_log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; log/php-fpm.log
+// 打开注释 &lt;span class=&#34;nv&#34;&gt;pid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; run/php-fpm.pid
+// 打开注释 &lt;span class=&#34;nv&#34;&gt;error_log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; log/php-fpm.log
 
 $ /tmp/php-8.0.0beta3/output/sbin/php-fpm -R //启动php-fpm
 
@@ -677,13 +671,9 @@ $ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //这样已�
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ chown -R www-data:www-data /opt //给予opt文件夹权限
-
-$ vim /opt/index.php
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /opt/index.php
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
