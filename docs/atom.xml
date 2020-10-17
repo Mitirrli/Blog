@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-17T23:04:04&#43;08:00</updated>
+    <updated>2020-10-17T23:05:56&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -818,7 +818,7 @@ $ nginx -s reload //reload会重新加载配置文件
             <title type="text">Composer 组件化开发</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/component/" />
             <id>https://mitirrli.github.io/blog/php/component/</id>
-            <updated>2020-10-17T23:03:38&#43;08:00</updated>
+            <updated>2020-10-17T23:05:48&#43;08:00</updated>
             <published>2019-10-03T12:33:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -828,7 +828,7 @@ $ nginx -s reload //reload会重新加载配置文件
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 目录结构 在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中 1 2 3 4 5 6 7 8 9  .</summary>
             
                 <content type="html">&lt;h3 id=&#34;1-目录结构&#34;&gt;1. 目录结构&lt;/h3&gt;
-&lt;h5 id=&#34;在项目根目录创建一个packagist包用来放置组件包加入到gitignore文件中通过path的方式让composer将test组件作为依赖加载到project中&#34;&gt;在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中&lt;/h5&gt;
+&lt;h6 id=&#34;在项目根目录创建一个packagist包用来放置组件包加入到gitignore文件中通过path的方式让composer将test组件作为依赖加载到project中&#34;&gt;在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中&lt;/h6&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
