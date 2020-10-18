@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-18T14:28:22&#43;08:00</updated>
+    <updated>2020-10-18T14:30:22&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -816,9 +816,9 @@ $ nginx -s reload //reload会重新加载配置文件
     
         <entry>
             <title type="text">Composer 组件化开发</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/component/" />
-            <id>https://mitirrli.github.io/blog/php/component/</id>
-            <updated>2020-10-18T14:25:30&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/composer-component/" />
+            <id>https://mitirrli.github.io/blog/php/composer-component/</id>
+            <updated>2020-10-18T14:30:10&#43;08:00</updated>
             <published>2019-10-03T12:33:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
