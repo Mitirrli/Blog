@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 19 Oct 2020 12:58:39 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 19 Oct 2020 13:01:00 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -820,7 +820,7 @@ $ nginx -s reload //reload会重新加载配置文件
             </item>
         
             <item>
-                <title>少写点代码</title>
+                <title>Clean code</title>
                 <link>https://mitirrli.github.io/blog/php/tips/</link>
                 <guid isPermaLink="true">https://mitirrli.github.io/blog/php/tips/</guid>
                 <pubDate>Thu, 01 Oct 2020 11:30:54 &#43;0800</pubDate>
