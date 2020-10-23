@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-22T09:08:40&#43;08:00</updated>
+    <updated>2020-10-23T11:16:29&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -16,6 +16,74 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.76.2">Hugo</generator>
+        <entry>
+            <title type="text">使用vscode开发php的一些配置</title>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/vscode-config/" />
+            <id>https://mitirrli.github.io/blog/php/vscode-config/</id>
+            <updated>2020-10-23T11:15:12&#43;08:00</updated>
+            <published>2020-10-20T13:25:52&#43;08:00</published>
+            <author>
+                    <name>mitirrli</name>
+                    <uri>https://mitirrli.github.io/blog/</uri>
+                    <email>phper.blue@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 汉化 1  [安装扩展]Chinese (Simplified) Language Pack for Visual Studio Code   2.</summary>
+            
+                <content type="html">&lt;h5 id=&#34;1-汉化&#34;&gt;1. 汉化&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[安装扩展]Chinese (Simplified) Language Pack for Visual Studio Code
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;2-php扩展&#34;&gt;2. php扩展&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[安装扩展]Php Debug、Php Extension Pack、Php IntelliSense
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&amp;hellip;未完待续&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/categories/vscode/" term="vscode" label="vscode" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/vscode/" term="vscode" label="vscode" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Php-fpm 2. Php Fpm 配置</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm-conf/" />
@@ -818,7 +886,7 @@ $ nginx -s reload //reload会重新加载配置文件
             <title type="text">Clean code</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/tips/" />
             <id>https://mitirrli.github.io/blog/php/tips/</id>
-            <updated>2020-10-19T13:00:50&#43;08:00</updated>
+            <updated>2020-10-22T13:25:34&#43;08:00</updated>
             <published>2020-10-01T11:30:54&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -1784,9 +1852,11 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ php -r &lt;span class=&#34;s1&#34;&gt;&amp;#39;echo 1;&amp;#39;&lt;/span&gt;
+$ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_limit&amp;#39;);&amp;#34;&lt;/span&gt;//查看内存限制
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h6 id=&#34;8-检查代码语法&#34;&gt;8. 检查代码语法&lt;/h6&gt;
@@ -1832,6 +1902,15 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ php -c /usr/local/etc/php/php.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h6 id=&#34;13-设置ini条目&#34;&gt;13. 设置ini条目&lt;/h6&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ php -d &lt;span class=&#34;nv&#34;&gt;memory_limit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-1 &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;which composer&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt; install
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>

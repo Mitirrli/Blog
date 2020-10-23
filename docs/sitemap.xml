@@ -4,27 +4,47 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-10-22T09:08:30+08:00</lastmod>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-10-22T09:08:30+08:00</lastmod>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/php/</loc>
-    <lastmod>2020-10-19T13:00:50+08:00</lastmod>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/php/</loc>
-    <lastmod>2020-10-22T09:08:30+08:00</lastmod>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/</loc>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/vscode/</loc>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/vscode/</loc>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/vscode-config/</loc>
+    <lastmod>2020-10-23T11:15:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/php/</loc>
-    <lastmod>2020-10-19T13:00:50+08:00</lastmod>
+    <lastmod>2020-10-22T13:25:34+08:00</lastmod>
   </url>
   
   <url>
@@ -35,11 +55,6 @@
   <url>
     <loc>https://mitirrli.github.io/blog/php/php-fpm-conf/</loc>
     <lastmod>2020-10-15T22:06:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-10-22T09:08:30+08:00</lastmod>
   </url>
   
   <url>
@@ -59,7 +74,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/php/tips/</loc>
-    <lastmod>2020-10-19T13:00:50+08:00</lastmod>
+    <lastmod>2020-10-22T13:25:34+08:00</lastmod>
   </url>
   
   <url>
@@ -74,11 +89,6 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/docker/docker-vscode/</loc>
-    <lastmod>2020-10-15T12:42:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/vscode/</loc>
     <lastmod>2020-10-15T12:42:34+08:00</lastmod>
   </url>
   
