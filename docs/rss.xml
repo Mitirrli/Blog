@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 23 Oct 2020 11:26:44 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 23 Oct 2020 11:28:20 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -1596,7 +1596,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/zh/function.date.php&#34;&gt;更多可以参考php手册&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.php.net/manual/zh/function.date.php&#34;&gt;参考php手册&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;3-将时间转换为时间戳&#34;&gt;3. 将时间转换为时间戳&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;strtotime — 将任何字符串的日期时间描述解析为 Unix 时间戳&lt;/p&gt;
@@ -1677,7 +1677,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
 &lt;span class=&#34;c1&#34;&gt;//输出2017-02-28
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.laruence.com/2018/07/31/3207.html&#34;&gt;更多可以参考令人困惑的strtotime&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.laruence.com/2018/07/31/3207.html&#34;&gt;令人困惑的strtotime&lt;/a&gt;&lt;/p&gt;
 </description>
                 
                 
