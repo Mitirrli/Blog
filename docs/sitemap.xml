@@ -4,12 +4,12 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-10-26T11:35:44+08:00</lastmod>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-10-26T11:35:44+08:00</lastmod>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
   </url>
   
   <url>
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/php/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
   </url>
   
   <url>
@@ -39,7 +39,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-10-26T11:35:44+08:00</lastmod>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
   </url>
   
   <url>
@@ -55,6 +55,26 @@
   <url>
     <loc>https://mitirrli.github.io/blog/php/php-fpm/</loc>
     <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/vscode/</loc>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/vscode/</loc>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/vscode/</loc>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/vscode/config/</loc>
+    <lastmod>2020-10-26T20:46:53+08:00</lastmod>
   </url>
   
   <url>
@@ -74,11 +94,6 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/docker/docker-vscode/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/vscode/</loc>
     <lastmod>2020-10-24T18:11:06+08:00</lastmod>
   </url>
   
@@ -199,12 +214,12 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/linux/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2020-10-26T15:23:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/linux/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2020-10-26T15:23:53+08:00</lastmod>
   </url>
   
   <url>
@@ -235,6 +250,21 @@
   <url>
     <loc>https://mitirrli.github.io/blog/mysql/binlog/</loc>
     <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/vim/</loc>
+    <lastmod>2020-10-26T15:23:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/vim/</loc>
+    <lastmod>2020-10-26T15:23:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/linux/vim/</loc>
+    <lastmod>2020-10-26T15:23:53+08:00</lastmod>
   </url>
   
   <url>
