@@ -10,7 +10,7 @@
         <title>Mitirrli</title>
         <link>https://mitirrli.github.io/blog/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
-        <generator>Hugo 0.76.2 https://gohugo.io/</generator>
+        <generator>Hugo 0.76.5 https://gohugo.io/</generator>
         
             <language>en</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 23 Oct 2020 11:28:20 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 26 Oct 2020 11:35:49 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
