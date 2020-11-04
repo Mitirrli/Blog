@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-11-03T20:19:17&#43;08:00</updated>
+    <updated>2020-11-04T22:30:03&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -15,7 +15,54 @@
                 <email>phper.blue@gmail.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
-    <generator uri="https://gohugo.io/" version="0.76.5">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.78.0">Hugo</generator>
+        <entry>
+            <title type="text">Php 垃圾回收机制</title>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/gc/" />
+            <id>https://mitirrli.github.io/blog/php/gc/</id>
+            <updated>2020-11-03T21:34:57&#43;08:00</updated>
+            <published>2020-10-23T21:29:05&#43;08:00</published>
+            <author>
+                    <name>mitirrli</name>
+                    <uri>https://mitirrli.github.io/blog/</uri>
+                    <email>phper.blue@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">引用计数    </summary>
+            
+                <content type="html">&lt;h2 id=&#34;引用计数&#34;&gt;引用计数&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Php-fpm 2. Php Fpm 配置</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm-conf/" />
