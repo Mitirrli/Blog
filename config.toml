@@ -406,7 +406,7 @@ limitPostsLimit = -1
 enableTagCloud = true
 
 fontUnit = "em"
-largestFontSize = 2.5
+largestFontSize = 3.0
 smallestFontSize = 1
 
 ######################################
