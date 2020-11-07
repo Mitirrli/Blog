@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mitirrli.github.io/blog/categories/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/none/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/none/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/compile/</loc>
+    <lastmod>2020-11-07T16:33:37+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/blog/tags/c/</loc>
     <lastmod>2020-11-07T14:10:43+08:00</lastmod>
   </url>
@@ -24,21 +59,6 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/c-/</loc>
-    <lastmod>2020-11-07T14:10:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-11-07T14:10:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-11-07T14:10:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/</loc>
     <lastmod>2020-11-07T14:10:43+08:00</lastmod>
   </url>
   
@@ -65,11 +85,6 @@
   <url>
     <loc>https://mitirrli.github.io/blog/chrome/vimium/</loc>
     <lastmod>2020-11-06T09:22:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/php/</loc>
-    <lastmod>2020-11-03T21:34:57+08:00</lastmod>
   </url>
   
   <url>

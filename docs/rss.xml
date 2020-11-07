@@ -23,10 +23,99 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Sat, 07 Nov 2020 14:10:48 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 07 Nov 2020 16:33:46 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
+        
+            <item>
+                <title>编译 PHP &amp;&amp; 构建 c 扩展</title>
+                <link>https://mitirrli.github.io/blog/php/compile/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/compile/</guid>
+                <pubDate>Sat, 07 Nov 2020 16:00:52 &#43;0800</pubDate>
+                
+                    <author>phper.blue@gmail.com (mitirrli)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;h3 id=&#34;1-下载最新版的-php&#34;&gt;1. 下载最新版的 php&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ axel -n 6 https://github.com/php/php-src/archive/php-8.0.0RC3.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-编译-php&#34;&gt;2. 编译 php&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ ./buildconf &amp;amp;&amp;amp; ./configure --prefix=[PATH] --with-iconv=$(brew --prefix libiconv)
+
+$ make
+
+$ make install
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;3-构建-c-扩展&#34;&gt;3. 构建 c 扩展&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ext //官方拓展目录
+
+$ ./ext_skel.php --ext testextension //创建扩展
+
+$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; testextension
+
+$ sudo ../../output/bin/phpize
+
+$ ./configure --with-php-config&lt;span class=&#34;o&#34;&gt;=[&lt;/span&gt;PATH&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/bin/php-config
+
+$ make &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+
+$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;extension=testextension.so&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ../../output/lib/php.ini //写入配置文件中
+
+$ ../../output/bin/php -m //此时已经可以看到扩展已经存在
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;4-使用对应的方法&#34;&gt;4. 使用对应的方法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ ../../output/bin/php -r &amp;quot;echo test1();&amp;quot;
+
+$ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://mitirrli.github.io/blog/categories/none/">none</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://mitirrli.github.io/blog/tags/none/">none</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Php 垃圾回收机制</title>
