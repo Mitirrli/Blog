@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Sat, 07 Nov 2020 16:33:46 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 07 Nov 2020 16:39:09 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -40,6 +40,8 @@
                 
                     <description>&lt;h3 id=&#34;1-下载最新版的-php&#34;&gt;1. 下载最新版的 php&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;$ axel -n 6 https://github.com/php/php-src/archive/php-8.0.0RC3.tar.gz
+
+//axel是一个多线程下载工具,大大提升了下载速度
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-编译-php&#34;&gt;2. 编译 php&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;$ ./buildconf &amp;amp;&amp;amp; ./configure --prefix=[PATH] --with-iconv=$(brew --prefix libiconv)
 
