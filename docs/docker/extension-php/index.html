@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "datePublished": "2019-11-10T21:21:10+08:00",
-        "dateModified": "2020-11-10T21:25:19+08:00",
+        "dateModified": "2020-11-10T22:02:25+08:00",
         "url": "https://mitirrli.github.io/blog/docker/extension-php/",
         "name": "为docker中的php容器安装扩展",
         "description": "1. 安装扩展, 以 redis 为例: 1 2 3 4 5 6 7  RUN curl -L -o /tmp/redis.",
@@ -268,11 +268,11 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="k">RUN</span> curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/5.3.2.tar.gz <span class="se">\
+<pre class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="k">RUN</span> curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/<span class="o">{</span>VERSION<span class="o">}</span>.tar.gz <span class="se">\
 </span><span class="se"></span>    <span class="o">&amp;&amp;</span> tar xfz /tmp/redis.tar.gz <span class="se">\
 </span><span class="se"></span>    <span class="o">&amp;&amp;</span> rm -r /tmp/redis.tar.gz <span class="se">\
 </span><span class="se"></span>    <span class="o">&amp;&amp;</span> mkdir -p /usr/src/php/ext <span class="se">\
-</span><span class="se"></span>    <span class="o">&amp;&amp;</span> mv phpredis-5.3.2 /usr/src/php/ext/phpredis<span class="err">
+</span><span class="se"></span>    <span class="o">&amp;&amp;</span> mv phpredis-<span class="o">{</span>VERSION<span class="o">}</span> /usr/src/php/ext/phpredis<span class="err">
 </span><span class="err">
 </span><span class="err"></span><span class="k">RUN</span> docker-php-ext-install phpredis<span class="err">
 </span></code></pre></td></tr></table></div>
@@ -329,7 +329,7 @@
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-11-10 21:25:19 CST" style="cursor:help">
+        <span title="Updated @ 2020-11-10 22:02:25 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-11-10</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-11-10</text></g></svg>
         </span></div>
