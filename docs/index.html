@@ -251,7 +251,7 @@
 
                 
                 <summary class="summary p-summary">
-                    1. 下载最新版的 php $ axel -n 6 https://github.
+                    1. 下载最新版的 php $ axel -n 6 https://github.com/php/php-src/archive/php-8.0.0RC3.tar.gz //axel是一个多线程下载工具,大大提升了下载速度 2. 编译 php $ ./buildconf &amp;&amp; ./configure --prefix=[PATH] --with-iconv=$(brew --prefix libiconv) $ make $ make install 3.
                 </summary>
                 
                     <div class="read-more-container">
@@ -297,13 +297,9 @@
 
                 
                 <summary class="summary p-summary">
-                    Garbage Collector 简称 GC
- 关于引用计数 1 2 3 4 5 6 7 8  &lt;?
+                     Garbage Collector 简称 GC
+ 关于引用计数 1 2 3 4 5 6 7 8  &lt;?php $a = &#34;new string&#34;; $b = $a; xdebug_debug_zval(&#39;a&#39;); // a: (interned, is_ref=0)=&#39;new string&#39;   
                 </summary>
-                
-                    <div class="read-more-container">
-                        <a href="/blog/php/gc/" class="read-more-link">Read More »</a>
-                    </div>
                 
             </article>
         
@@ -391,6 +387,7 @@
                 
                 <summary class="summary p-summary">
                     nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx
+ 为了不破坏本机的环境,搭建一个 ubuntu 的 docker 环境 1. CGI 和 FastCGI 1 2 3 4 5  1.
                 </summary>
                 
                     <div class="read-more-container">
@@ -436,7 +433,7 @@
 
                 
                 <summary class="summary p-summary">
-                    1. 合并所有元素(使用数组解包) 1 2 3 4 5 6 7  &lt;?
+                    1. 合并所有元素(使用数组解包) 1 2 3 4 5 6 7  &lt;?php $a = 1; $b = [2, 3]; var_dump(array_merge([$a], $b));//php7.4前  var_dump([$a, .
                 </summary>
                 
                     <div class="read-more-container">
@@ -482,7 +479,7 @@
 
                 
                 <summary class="summary p-summary">
-                    本地调试组件 1. 目录结构 在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中 1 2 3 4 5 6 7 8 9  .
+                    本地调试组件 1. 目录结构 在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中 1 2 3 4 5 6 7 8 9  . ├── packagist │ └── test │ └── src └── project ├── app ├── config ├── runtime └── vendor   2.
                 </summary>
                 
                     <div class="read-more-container">

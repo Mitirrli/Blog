@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-11-11T21:49:35&#43;08:00</updated>
+    <updated>2020-11-13T22:37:08&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -27,7 +27,7 @@
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 下载最新版的 php $ axel -n 6 https://github.</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 下载最新版的 php $ axel -n 6 https://github.com/php/php-src/archive/php-8.0.0RC3.tar.gz //axel是一个多线程下载工具,大大提升了下载速度 2. 编译 php $ ./buildconf &amp;amp;&amp;amp; ./configure --prefix=[PATH] --with-iconv=$(brew --prefix libiconv) $ make $ make install 3.</summary>
             
                 <content type="html">&lt;h3 id=&#34;1-下载最新版的-php&#34;&gt;1. 下载最新版的 php&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;$ axel -n 6 https://github.com/php/php-src/archive/php-8.0.0RC3.tar.gz
@@ -127,8 +127,8 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Garbage Collector 简称 GC
- 关于引用计数 1 2 3 4 5 6 7 8  &amp;lt;?</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html"> Garbage Collector 简称 GC
+ 关于引用计数 1 2 3 4 5 6 7 8  &amp;lt;?php $a = &amp;#34;new string&amp;#34;; $b = $a; xdebug_debug_zval(&amp;#39;a&amp;#39;); // a: (interned, is_ref=0)=&amp;#39;new string&amp;#39;   </summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Garbage Collector 简称 GC&lt;/p&gt;
@@ -636,7 +636,8 @@ rlimit_core = 0
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx
+ 为了不破坏本机的环境,搭建一个 ubuntu 的 docker 环境 1. CGI 和 FastCGI 1 2 3 4 5  1.</summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx&lt;/p&gt;
@@ -994,7 +995,7 @@ $ nginx -s reload //reload会重新加载配置文件
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 合并所有元素(使用数组解包) 1 2 3 4 5 6 7  &amp;lt;?</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 合并所有元素(使用数组解包) 1 2 3 4 5 6 7  &amp;lt;?php $a = 1; $b = [2, 3]; var_dump(array_merge([$a], $b));//php7.4前  var_dump([$a, .</summary>
             
                 <content type="html">&lt;h3 id=&#34;1-合并所有元素使用数组解包&#34;&gt;1. 合并所有元素(使用数组解包)&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1297,7 +1298,7 @@ $ nginx -s reload //reload会重新加载配置文件
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">本地调试组件 1. 目录结构 在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中 1 2 3 4 5 6 7 8 9  .</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">本地调试组件 1. 目录结构 在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中 1 2 3 4 5 6 7 8 9  . ├── packagist │ └── test │ └── src └── project ├── app ├── config ├── runtime └── vendor   2.</summary>
             
                 <content type="html">&lt;h2 id=&#34;本地调试组件&#34;&gt;本地调试组件&lt;/h2&gt;
 &lt;h5 id=&#34;1-目录结构&#34;&gt;1. 目录结构&lt;/h5&gt;
@@ -1586,7 +1587,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 设置时区  date_default_timezone_set — 设定用于一个脚本中所有日期时间函数的默认时区</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 设置时区  date_default_timezone_set — 设定用于一个脚本中所有日期时间函数的默认时区
+ date_default_timezone_set ( string $timezone_identifier ) : bool 用法 1  date_default_timezone_set(&amp;#39;Asia/Shanghai&amp;#39;);    ini_set — 为一个配置选项设置值，这个选项会在脚本运行时保持新的值，并在脚本结束时恢复。</summary>
             
                 <content type="html">&lt;h4 id=&#34;1-设置时区&#34;&gt;1. 设置时区&lt;/h4&gt;
 &lt;blockquote&gt;
@@ -1894,7 +1896,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">有用的php命令行命令 1. 查看当前已安装的扩展 1  $ php -m   2.</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">有用的php命令行命令 1. 查看当前已安装的扩展 1  $ php -m   2. 查看当前php版本 1  $ php -v   3. 查看扩展版本 1  $ php --ri 扩展名   4.</summary>
             
                 <content type="html">&lt;h1 id=&#34;有用的php命令行命令&#34;&gt;有用的php命令行命令&lt;/h1&gt;
 &lt;h6 id=&#34;1-查看当前已安装的扩展&#34;&gt;1. 查看当前已安装的扩展&lt;/h6&gt;
