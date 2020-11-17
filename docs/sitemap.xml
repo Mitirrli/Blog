@@ -14,12 +14,12 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-11-16T23:33:35+08:00</lastmod>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-11-16T23:33:35+08:00</lastmod>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
   </url>
   
   <url>
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-11-16T23:33:35+08:00</lastmod>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
   </url>
   
   <url>
@@ -188,6 +188,26 @@
   </url>
   
   <url>
+    <loc>https://mitirrli.github.io/blog/kubernetes/</loc>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/kubernetes/</loc>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/kubernetes/</loc>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/kubernetes/yaml/</loc>
+    <lastmod>2020-11-17T19:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/blog/categories/git/</loc>
     <lastmod>2020-11-03T20:18:57+08:00</lastmod>
   </url>
@@ -224,21 +244,6 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/kubernetes/question-record/</loc>
-    <lastmod>2020-10-29T16:17:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/kubernetes/</loc>
-    <lastmod>2020-10-29T16:17:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/kubernetes/</loc>
-    <lastmod>2020-10-29T16:17:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/categories/kubernetes/</loc>
     <lastmod>2020-10-29T16:17:45+08:00</lastmod>
   </url>
   
