@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mitirrli.github.io/blog/categories/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/mysql/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/mysql/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/mysql/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/mysql/operate/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/</loc>
+    <lastmod>2020-11-24T13:04:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/blog/tags/c/</loc>
     <lastmod>2020-11-07T16:58:18+08:00</lastmod>
   </url>
@@ -13,16 +48,6 @@
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-11-19T14:17:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-11-19T14:17:08+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mitirrli.github.io/blog/php/</loc>
     <lastmod>2020-11-15T21:09:24+08:00</lastmod>
   </url>
@@ -30,11 +55,6 @@
   <url>
     <loc>https://mitirrli.github.io/blog/tags/php/</loc>
     <lastmod>2020-11-15T21:09:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-11-19T14:17:08+08:00</lastmod>
   </url>
   
   <url>
@@ -359,21 +379,6 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/linux/script/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/mysql/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/mysql/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/categories/mysql/</loc>
     <lastmod>2020-10-24T18:11:06+08:00</lastmod>
   </url>
   
