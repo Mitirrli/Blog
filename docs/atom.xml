@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-11-25T21:18:18&#43;08:00</updated>
+    <updated>2020-11-28T17:58:28&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -1346,6 +1346,109 @@ $ nginx -s reload //reload会重新加载配置文件
                             
                             
                                 <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Composer Git Hooks</title>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/composer-git-hooks/" />
+            <id>https://mitirrli.github.io/blog/php/composer-git-hooks/</id>
+            <updated>2020-11-28T17:58:02&#43;08:00</updated>
+            <published>2019-11-28T15:00:45&#43;08:00</published>
+            <author>
+                    <name>mitirrli</name>
+                    <uri>https://mitirrli.github.io/blog/</uri>
+                    <email>phper.blue@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 关于 Git Hooks  和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。 有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 你可以随心所欲地运用这些钩子。
+  钩子都被存储在 Git 目录下的 hooks 子目录中。 也即绝大部分项目中的 .git/hooks 。 当你用 git init 初始化一个新版本库时，Git 默认会在这个目录中放置一些示例脚本。 这些脚本除了本身可以被调用外，它们还透露了被触发时所传入的参数。 所有的示例都是 shell 脚本，其中一些还混杂了 Perl 代码，不过，任何正确命名的可执行脚本都可以正常使用 —— 你可以用 Ruby 或 Python，或任何你熟悉的语言编写它们。 这些示例的名字都是以 .</summary>
+            
+                <content type="html">&lt;h3 id=&#34;1-关于-git-hookshttpsgit-scmcombookzhv2e887aae5ae9ae4b989-git-git-e992a9e5ad90&#34;&gt;1. &lt;a href=&#34;https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90&#34;&gt;关于 Git Hooks&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。 有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 你可以随心所欲地运用这些钩子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;钩子都被存储在 Git 目录下的 hooks 子目录中。 也即绝大部分项目中的 .git/hooks 。 当你用 git init 初始化一个新版本库时，Git 默认会在这个目录中放置一些示例脚本。 这些脚本除了本身可以被调用外，它们还透露了被触发时所传入的参数。 所有的示例都是 shell 脚本，其中一些还混杂了 Perl 代码，不过，任何正确命名的可执行脚本都可以正常使用 —— 你可以用 Ruby 或 Python，或任何你熟悉的语言编写它们。 这些示例的名字都是以 .sample 结尾，如果你想启用它们，得先移除这个后缀。把一个正确命名（不带扩展名）且可执行的文件放入 .git 目录下的 hooks 子目录中，即可激活该钩子脚本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;2-提交工作流钩子&#34;&gt;2. 提交工作流钩子&lt;/h3&gt;
+&lt;h4 id=&#34;1-pre-commit&#34;&gt;1. pre-commit&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;pre-commit 钩子在键入提交信息前运行。 它用于检查即将提交的快照，例如，检查是否有所遗漏，确保测试运行，以及核查代码。 如果该钩子以非零值退出，Git 将放弃此次提交，不过你可以用 git commit --no-verify 来绕过这个环节。 你可以利用该钩子，来检查代码风格是否一致（运行类似 lint 的程序）、尾随空白字符是否存在（自带的钩子就是这么做的），或新方法的文档是否适当。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;2-post-commit&#34;&gt;2. post-commit&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;钩子在整个提交过程完成后运行。 它不接收任何参数，但你可以很容易地通过运行 git log -1 HEAD 来获得最后一次的提交信息。 该钩子一般用于通知之类的事情。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;3-pre-push&#34;&gt;3. pre-push&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;pre-push 钩子会在 git push 运行期间， 更新了远程引用但尚未传送对象时被调用。 它接受远程分支的名字和位置作为参数，同时从标准输入中读取一系列待更新的引用。 你可以在推送开始之前，用它验证对引用的更新操作（一个非零的退出码将终止推送过程）。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;4-post-merge&#34;&gt;4. post-merge&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;在 git merge 成功运行后，post-merge 钩子会被调用。 你可以用它恢复 Git 无法跟踪的工作区数据，比如权限数据。 这个钩子也可以用来验证某些在 Git 控制之外的文件是否存在，这样你就能在工作区改变时，把这些文件复制进来。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;3-安装composer-git-hooks-httpsgithubcombrainmaestrocomposer-git-hooks&#34;&gt;3. &lt;a href=&#34;https://github.com/BrainMaestro/composer-git-hooks&#34;&gt;安装composer-git-hooks &lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;extra&amp;quot;: {
+    &amp;quot;hooks&amp;quot;: {
+        &amp;quot;pre-commit&amp;quot;: &amp;quot;composer check-style&amp;quot;,
+        &amp;quot;pre-push&amp;quot;: [
+            &amp;quot;composer test&amp;quot;,
+            &amp;quot;composer cs-fix&amp;quot;
+        ]
+    }
+},
+&amp;quot;scripts&amp;quot;: {
+    &amp;quot;post-update-cmd&amp;quot;: [
+        &amp;quot;cghooks update&amp;quot;
+    ],
+    &amp;quot;post-merge&amp;quot;: &amp;quot;composer install&amp;quot;,
+    &amp;quot;post-install-cmd&amp;quot;: [
+        &amp;quot;cghooks add --ignore-lock&amp;quot;,
+        &amp;quot;cghooks update&amp;quot;
+    ],
+    &amp;quot;check-style&amp;quot;: &amp;quot;php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi&amp;quot;,
+    &amp;quot;cs-fix&amp;quot;: &amp;quot;php-cs-fixer fix --using-cache=no --config=.php_cs --ansi&amp;quot;,
+    &amp;quot;test&amp;quot;: &amp;quot;vendor/bin/phpunit --colors=always --testdox&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ composer require --dev brainmaestro/composer-git-hooks
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/git/" term="git" label="git" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/composer/" term="composer" label="composer" />
                             
                         
                     
