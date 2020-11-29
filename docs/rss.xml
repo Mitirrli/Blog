@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Sun, 29 Nov 2020 10:22:24 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 29 Nov 2020 10:23:26 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
@@ -193,8 +193,8 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
         
             <item>
                 <title>PHP FPM</title>
-                <link>https://mitirrli.github.io/blog/php/php-fpm/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/php-fpm/</guid>
+                <link>https://mitirrli.github.io/blog/php/php-fpm-union/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/php-fpm-union/</guid>
                 <pubDate>Tue, 06 Oct 2020 12:49:27 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
