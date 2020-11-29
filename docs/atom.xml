@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-11-29T10:08:04&#43;08:00</updated>
+    <updated>2020-11-29T10:17:39&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -187,19 +187,319 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
         </entry>
     
         <entry>
-            <title type="text">Php-fpm 2. Php Fpm 配置</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm-conf/" />
-            <id>https://mitirrli.github.io/blog/php/php-fpm-conf/</id>
-            <updated>2020-10-24T18:11:06&#43;08:00</updated>
-            <published>2020-10-07T21:55:24&#43;08:00</published>
+            <title type="text">PHP FPM</title>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm/" />
+            <id>https://mitirrli.github.io/blog/php/php-fpm/</id>
+            <updated>2020-11-29T10:17:35&#43;08:00</updated>
+            <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
                     <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. slow log 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  $ cd /tmp/php-8.</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Part 1. PHP FPM 和 NGINX  nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx
+ 为了不破坏本机的环境,搭建一个 ubuntu 的 docker 环境 1.</summary>
             
-                <content type="html">&lt;h4 id=&#34;1-slow-log&#34;&gt;1. slow log&lt;/h4&gt;
+                <content type="html">&lt;h3 id=&#34;part-1-php-fpm-和-nginx&#34;&gt;Part 1. PHP FPM 和 NGINX&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;为了不破坏本机的环境搭建一个-ubuntu-的-docker-环境&#34;&gt;为了不破坏本机的环境,搭建一个 ubuntu 的 docker 环境&lt;/h4&gt;
+&lt;h5 id=&#34;1-cgi-和-fastcgi&#34;&gt;1. CGI 和 FastCGI&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;1. CGI(common gateway interface 公共网关接口)
+对于动态的请求，需要用到cgi协议，将请求数据转换成php能理解的信息，然后php根据这些信息返回的信息也要通过cgi协议转换成nginx可以理解的信息，最后nginx接到这些信息再返回给浏览器
+
+2. FastCGI
+传统的cgi协议在每次连接请求时，会开启一个进程进行处理，处理完毕会关闭该进程，周而复始。因此有多少个连接就有多少个cgi进程，过多的进程会消耗资源和内存
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;php-cgi&#34;&gt;php-cgi&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;php-cgi 是 php 提供给 web serve 的 cgi 协议接口程序&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;当每次接到http前端服务器的请求都会开启一个php-cgi进程进行处理
+
+而且开启的php-cgi的过程中会先要重载配置，数据结构以及初始化运行环境，如果更新了php配置，那么就需要重启php-cgi才能生效
+
+直接杀死php-cgi进程,php就不能运行了(PHP-FPM没有这个问题,守护进程会平滑从新生成新的子进程）
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;php-fpm&#34;&gt;php-fpm&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;php-fpm 是 php 提供给 web serve 的 fastcgi 协议接口程序&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PHP-FPM 允许一个进程对多个连接进行处理，而不会立即关闭这个进程，而是会接着处理下一个连接,它可以说是php-cgi的一个管理程序，是对php-cgi的改进
+
+php-fpm会开启多个php-cgi程序，并且php-fpm常驻内存
+
+每次web serve服务器发送连接过来的时候，php-fpm将连接信息分配给下面其中的一个子程序php-cgi进行处理，处理完毕这个php-cgi并不会关闭，而是继续等待下一个连接，这也是fast-cgi加速的原理
+
+但是由于php-fpm是多进程的，而一个php-cgi基本消耗7-25M内存，因此如果连接过多就会导致内存消耗过大
+
+php-fpm将新的连接发送给新的子程序php-cgi，这个时候加载的是新的配置，而原先正在运行的php-cgi还是使用的原先的配置，等到这个连接后下一次连接的时候会使用新的配置初始化，这就是平滑过渡
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;fastcgi-的工作流程&#34;&gt;FastCGI 的工作流程&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Web Server启动时载入FastCGI进程管理器
+FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多个php-cgi)并等待来自Web Server的连接
+当客户端请求到达Web Server时，FastCGI进程管理器选择并连接到一个CGI解释器。 Web server将CGI环境变量和标准输入发送到FastCGI子进程php-cgi
+FastCGI 子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。在CGI模式中，php-cgi在此便退出了
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6844903725102792718&#34;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;2-编译安装-php&#34;&gt;2. 编译安装 php&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ docker pull ubuntu:latest
+
+$ docker run --name ubuntu --cap-add&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;SYS_PTRACE -p 6767:80 -d ubuntu /bin/bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;while true; do echo 1; sleep 1; done&amp;#34;&lt;/span&gt;
+
+$ docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it ubuntu bash //进入容器
+
+$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp
+
+$ sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&amp;#39;&lt;/span&gt; /etc/apt/sources.list //使用国内镜像
+
+$ apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install -y wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool
+
+$ wget -c https://downloads.php.net/~carusogabriel/php-8.0.0beta3.tar.gz //我这边直接安装当前最新版
+
+$ tar zxvf php-8.0.0beta3.tar.gz
+
+$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; php-8.0.0beta3
+
+$ ./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/tmp/php-8.0.0beta3/output --enable-fpm --with-fpm-user&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;www-data --with-fpm-group&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;www-data //在配置的时候设置路径&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;安装的路径前缀&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;,选择开启fpm,同时设置fpm的user和group
+
+$ make //编译,这一步需要比较长的时间&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;之后sapi/cli目录里就已经有了php的可执行文件&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+
+$ make install //安装&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;make install后可以执行&lt;span class=&#34;nv&#34;&gt;$prefix&lt;/span&gt;/bin/php,此时在/tmp/php-8.0.0beta3/output/sbin目录下已经有了php-fpm的可执行文件&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;3-重命名配置文件&#34;&gt;3. 重命名配置文件&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.conf &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;4-安装-nginx&#34;&gt;4. 安装 nginx&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ apt install -y nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;5-使用-unix-套接字通讯&#34;&gt;5. 使用 unix 套接字通讯&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ mkdir -p /var/run/php-fpm
+
+$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
+// 修改 &lt;span class=&#34;nv&#34;&gt;listen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; /var/run/php-fpm/php8-fpm.sock
+// 打开注释 listen.owner &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
+// 打开注释 listen.group &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
+// 打开注释 listen.mode &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0660&lt;/span&gt;
+
+$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.conf
+// 打开注释 &lt;span class=&#34;nv&#34;&gt;pid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; run/php-fpm.pid
+// 打开注释 &lt;span class=&#34;nv&#34;&gt;error_log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; log/php-fpm.log
+
+$ /tmp/php-8.0.0beta3/output/sbin/php-fpm -R //启动php-fpm
+
+$ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //这样已经可以看到对应的php-fpm进程了
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;6-创建一个-php-文件&#34;&gt;6. 创建一个 php 文件&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /opt/index.php
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;phpinfo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;7-nginx-创建一个配置文件&#34;&gt;7. nginx 创建一个配置文件&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /etc/nginx/conf.d/demo.conf //创建一个配置文件
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span class=&#34;k&#34;&gt;server&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kn&#34;&gt;listen&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;kn&#34;&gt;server_name&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;127&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;.0.0.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;kn&#34;&gt;root&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;/opt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;kn&#34;&gt;location&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kn&#34;&gt;index&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;index.html&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;index.htm&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;index.php&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kn&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;(!-e&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$request_filename&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;kn&#34;&gt;rewrite&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;^/(.*)&lt;/span&gt;$ &lt;span class=&#34;s&#34;&gt;/index.php?s=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;last&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;kn&#34;&gt;rewrite&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;index.php/(.*)&lt;/span&gt;$ &lt;span class=&#34;s&#34;&gt;/index.php?s=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;last&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;kn&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;kn&#34;&gt;location&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;~&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;\.php$&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kn&#34;&gt;fastcgi_pass&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;unix:/var/run/php-fpm/php8-fpm.sock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kn&#34;&gt;fastcgi_index&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;index.php&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kn&#34;&gt;fastcgi_param&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;SCRIPT_FILENAME&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$document_root$fastcgi_script_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kn&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;fastcgi_params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ systemctl stop nginx
+
+$ nginx -c /etc/nginx/nginx.conf
+
+$ nginx -s reload //reload会重新加载配置文件
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ curl 127.0.0.1 //在容器中执行本命令可以看到成功结果,容器外访问http://127.0.0.1:6767/可以查看对应详情
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;part-2-php-fpm配置&#34;&gt;Part 2. PHP FPM配置&lt;/h3&gt;
+&lt;h5 id=&#34;1-slow-log&#34;&gt;1. slow log&lt;/h5&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -239,7 +539,7 @@ $ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf //打开慢日志开关
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://caihongtengxu.github.io/2019/20190516/index.html&#34;&gt;PHP-FPM可以创建慢日志文件，但是却不能给慢日志文件写入内容&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2-配置php-fpm&#34;&gt;2. 配置php-fpm&lt;/h4&gt;
+&lt;h5 id=&#34;2-配置php-fpm&#34;&gt;2. 配置php-fpm&lt;/h5&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -292,7 +592,7 @@ pm.max_spare_servers = 4
 $ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //可以看到目前有1个Fastcgi进程管理器和4个Fastcgi子进程
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;3-php-fpm参数说明httpslearnkucomarticles4483585187d&#34;&gt;3. &lt;a href=&#34;https://learnku.com/articles/44835#85187d&#34;&gt;php-fpm参数说明&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;&lt;h5 id=&#34;3-php-fpm参数说明httpslearnkucomarticles4483585187d&#34;&gt;3. &lt;a href=&#34;https://learnku.com/articles/44835#85187d&#34;&gt;php-fpm参数说明&lt;/a&gt;&lt;/h5&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -445,7 +745,7 @@ events.mechanism = epoll
 systemd_interval = 10s 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;4-php-fpm进程进程池配置httpslearnkucomarticles4483585187d&#34;&gt;4. &lt;a href=&#34;https://learnku.com/articles/44835#85187d&#34;&gt;php-fpm进程进程池配置&lt;/a&gt;&lt;/h4&gt;
+&lt;/div&gt;&lt;h5 id=&#34;4-php-fpm进程进程池配置httpslearnkucomarticles4483585187d&#34;&gt;4. &lt;a href=&#34;https://learnku.com/articles/44835#85187d&#34;&gt;php-fpm进程进程池配置&lt;/a&gt;&lt;/h5&gt;
 &lt;blockquote&gt;
 &lt;p&gt;1个子进程基本上占用内存在30MB-40MB左右,需要根据自己的主机配置以及业务情况给出合适的方案&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -587,353 +887,6 @@ rlimit_files = 1024
 
 #最多的核心使用数，默认为系统分配。
 rlimit_core = 0 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
-            
-            
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
-                            
-                        
-                    
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://mitirrli.github.io/blog/tags/php-fpm/" term="php-fpm" label="php-fpm" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">Php-fpm 1. Php Fpm 和 Nginx</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm/" />
-            <id>https://mitirrli.github.io/blog/php/php-fpm/</id>
-            <updated>2020-10-27T17:18:36&#43;08:00</updated>
-            <published>2020-10-06T12:49:27&#43;08:00</published>
-            <author>
-                    <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/blog/</uri>
-                    <email>phper.blue@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx
- 为了不破坏本机的环境,搭建一个 ubuntu 的 docker 环境 1. CGI 和 FastCGI 1 2 3 4 5  1.</summary>
-            
-                <content type="html">&lt;blockquote&gt;
-&lt;p&gt;nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;为了不破坏本机的环境搭建一个-ubuntu-的-docker-环境&#34;&gt;为了不破坏本机的环境,搭建一个 ubuntu 的 docker 环境&lt;/h2&gt;
-&lt;h4 id=&#34;1-cgi-和-fastcgi&#34;&gt;1. CGI 和 FastCGI&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;1. CGI(common gateway interface 公共网关接口)
-对于动态的请求，需要用到cgi协议，将请求数据转换成php能理解的信息，然后php根据这些信息返回的信息也要通过cgi协议转换成nginx可以理解的信息，最后nginx接到这些信息再返回给浏览器
-
-2. FastCGI
-传统的cgi协议在每次连接请求时，会开启一个进程进行处理，处理完毕会关闭该进程，周而复始。因此有多少个连接就有多少个cgi进程，过多的进程会消耗资源和内存
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;php-cgi&#34;&gt;php-cgi&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;php-cgi 是 php 提供给 web serve 的 cgi 协议接口程序&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;当每次接到http前端服务器的请求都会开启一个php-cgi进程进行处理
-
-而且开启的php-cgi的过程中会先要重载配置，数据结构以及初始化运行环境，如果更新了php配置，那么就需要重启php-cgi才能生效
-
-直接杀死php-cgi进程,php就不能运行了(PHP-FPM没有这个问题,守护进程会平滑从新生成新的子进程）
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;php-fpm&#34;&gt;php-fpm&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;php-fpm 是 php 提供给 web serve 的 fastcgi 协议接口程序&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PHP-FPM 允许一个进程对多个连接进行处理，而不会立即关闭这个进程，而是会接着处理下一个连接,它可以说是php-cgi的一个管理程序，是对php-cgi的改进
-
-php-fpm会开启多个php-cgi程序，并且php-fpm常驻内存
-
-每次web serve服务器发送连接过来的时候，php-fpm将连接信息分配给下面其中的一个子程序php-cgi进行处理，处理完毕这个php-cgi并不会关闭，而是继续等待下一个连接，这也是fast-cgi加速的原理
-
-但是由于php-fpm是多进程的，而一个php-cgi基本消耗7-25M内存，因此如果连接过多就会导致内存消耗过大
-
-php-fpm将新的连接发送给新的子程序php-cgi，这个时候加载的是新的配置，而原先正在运行的php-cgi还是使用的原先的配置，等到这个连接后下一次连接的时候会使用新的配置初始化，这就是平滑过渡
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;fastcgi-的工作流程&#34;&gt;FastCGI 的工作流程&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Web Server启动时载入FastCGI进程管理器
-FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多个php-cgi)并等待来自Web Server的连接
-当客户端请求到达Web Server时，FastCGI进程管理器选择并连接到一个CGI解释器。 Web server将CGI环境变量和标准输入发送到FastCGI子进程php-cgi
-FastCGI 子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。在CGI模式中，php-cgi在此便退出了
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://juejin.im/post/6844903725102792718&#34;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2-编译安装-php&#34;&gt;2. 编译安装 php&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ docker pull ubuntu:latest
-
-$ docker run --name ubuntu --cap-add&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;SYS_PTRACE -p 6767:80 -d ubuntu /bin/bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;while true; do echo 1; sleep 1; done&amp;#34;&lt;/span&gt;
-
-$ docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it ubuntu bash //进入容器
-
-$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp
-
-$ sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&amp;#39;&lt;/span&gt; /etc/apt/sources.list //使用国内镜像
-
-$ apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install -y wget curl vim gcc pkg-config systemctl make libxml2-dev libsqlite3-dev //下载之后需要的一些tool
-
-$ wget -c https://downloads.php.net/~carusogabriel/php-8.0.0beta3.tar.gz //我这边直接安装当前最新版
-
-$ tar zxvf php-8.0.0beta3.tar.gz
-
-$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; php-8.0.0beta3
-
-$ ./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/tmp/php-8.0.0beta3/output --enable-fpm --with-fpm-user&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;www-data --with-fpm-group&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;www-data //在配置的时候设置路径&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;安装的路径前缀&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;,选择开启fpm,同时设置fpm的user和group
-
-$ make //编译,这一步需要比较长的时间&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;之后sapi/cli目录里就已经有了php的可执行文件&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-
-$ make install //安装&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;make install后可以执行&lt;span class=&#34;nv&#34;&gt;$prefix&lt;/span&gt;/bin/php,此时在/tmp/php-8.0.0beta3/output/sbin目录下已经有了php-fpm的可执行文件&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;3-重命名配置文件&#34;&gt;3. 重命名配置文件&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ mv /tmp/php-8.0.0beta3/output/etc/php-fpm.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.conf &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mv /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf.default /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;4-安装-nginx&#34;&gt;4. 安装 nginx&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ apt install -y nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;5-使用-unix-套接字通讯&#34;&gt;5. 使用 unix 套接字通讯&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ mkdir -p /var/run/php-fpm
-
-$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.d/www.conf
-// 修改 &lt;span class=&#34;nv&#34;&gt;listen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; /var/run/php-fpm/php8-fpm.sock
-// 打开注释 listen.owner &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
-// 打开注释 listen.group &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; www-data
-// 打开注释 listen.mode &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0660&lt;/span&gt;
-
-$ vim /tmp/php-8.0.0beta3/output/etc/php-fpm.conf
-// 打开注释 &lt;span class=&#34;nv&#34;&gt;pid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; run/php-fpm.pid
-// 打开注释 &lt;span class=&#34;nv&#34;&gt;error_log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; log/php-fpm.log
-
-$ /tmp/php-8.0.0beta3/output/sbin/php-fpm -R //启动php-fpm
-
-$ ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep php-fpm //这样已经可以看到对应的php-fpm进程了
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;6-创建一个-php-文件&#34;&gt;6. 创建一个 php 文件&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /opt/index.php
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;phpinfo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;7-nginx-创建一个配置文件&#34;&gt;7. nginx 创建一个配置文件&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ vim /etc/nginx/conf.d/demo.conf //创建一个配置文件
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span class=&#34;k&#34;&gt;server&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;kn&#34;&gt;listen&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-  &lt;span class=&#34;kn&#34;&gt;server_name&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;127&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;.0.0.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-  &lt;span class=&#34;kn&#34;&gt;root&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;/opt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-  &lt;span class=&#34;kn&#34;&gt;location&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kn&#34;&gt;index&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;index.html&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;index.htm&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;index.php&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;kn&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;(!-e&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$request_filename&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-      &lt;span class=&#34;kn&#34;&gt;rewrite&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;^/(.*)&lt;/span&gt;$ &lt;span class=&#34;s&#34;&gt;/index.php?s=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;last&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-      &lt;span class=&#34;kn&#34;&gt;rewrite&lt;/span&gt;  &lt;span class=&#34;s&#34;&gt;index.php/(.*)&lt;/span&gt;$ &lt;span class=&#34;s&#34;&gt;/index.php?s=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;last&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-      &lt;span class=&#34;kn&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-  &lt;span class=&#34;kn&#34;&gt;location&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;~&lt;/span&gt; &lt;span class=&#34;sr&#34;&gt;\.php$&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kn&#34;&gt;fastcgi_pass&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;unix:/var/run/php-fpm/php8-fpm.sock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;kn&#34;&gt;fastcgi_index&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;index.php&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;kn&#34;&gt;fastcgi_param&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;SCRIPT_FILENAME&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$document_root$fastcgi_script_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;kn&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;fastcgi_params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ systemctl stop nginx
-
-$ nginx -c /etc/nginx/nginx.conf
-
-$ nginx -s reload //reload会重新加载配置文件
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ curl 127.0.0.1 //在容器中执行本命令可以看到成功结果,容器外访问http://127.0.0.1:6767/可以查看对应详情
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
