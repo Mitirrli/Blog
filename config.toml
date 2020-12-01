@@ -549,7 +549,7 @@ themeColorDark = "#16171d"
 
 jsonLD = true
 openGraph = true
-twitterCards = true
+twitterCards = false
 # ATTENTION: If you set twitterCards
 #            to `true`, be sure to
 #            enable openGraph also.
