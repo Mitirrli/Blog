@@ -14,27 +14,27 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-12-06T18:14:08+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-12-06T18:14:08+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/php/</loc>
-    <lastmod>2020-11-29T10:25:41+08:00</lastmod>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/php/</loc>
-    <lastmod>2020-11-29T10:28:41+08:00</lastmod>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-12-06T18:14:08+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
@@ -69,7 +69,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/php/</loc>
-    <lastmod>2020-11-29T10:25:41+08:00</lastmod>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
@@ -194,17 +194,17 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/kubernetes/</loc>
-    <lastmod>2020-11-19T13:32:09+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/tags/kubernetes/</loc>
-    <lastmod>2020-11-19T13:32:09+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/blog/categories/kubernetes/</loc>
-    <lastmod>2020-11-19T13:32:09+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
@@ -244,7 +244,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/blog/kubernetes/question-record/</loc>
-    <lastmod>2020-10-29T16:17:45+08:00</lastmod>
+    <lastmod>2020-12-19T21:25:59+08:00</lastmod>
   </url>
   
   <url>
@@ -395,6 +395,16 @@
   <url>
     <loc>https://mitirrli.github.io/blog/mysql/binlog/</loc>
     <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/closure/</loc>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/closure/</loc>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
