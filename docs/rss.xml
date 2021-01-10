@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Mitirrli</title>
-        <link>https://mitirrli.github.io/blog/</link>
+        <link>https://mitirrli.github.io/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.78.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Sun, 10 Jan 2021 14:06:21 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 10 Jan 2021 22:32:16 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/rss.xml" />
         
         
             <item>
                 <title>React Php</title>
-                <link>https://mitirrli.github.io/blog/php/react-php/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/react-php/</guid>
+                <link>https://mitirrli.github.io/php/react-php/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/react-php/</guid>
                 <pubDate>Thu, 26 Nov 2020 16:16:00 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -79,7 +79,7 @@
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -89,7 +89,7 @@
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/react-php/">react-php</category>
+                                    <category domain="https://mitirrli.github.io/tags/react-php/">react-php</category>
                                 
                             
                         
@@ -99,8 +99,8 @@
         
             <item>
                 <title>编译 PHP &amp;&amp; 构建 c 扩展</title>
-                <link>https://mitirrli.github.io/blog/php/compile/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/compile/</guid>
+                <link>https://mitirrli.github.io/php/compile/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/compile/</guid>
                 <pubDate>Sat, 07 Nov 2020 16:00:52 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -170,7 +170,7 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/c/">c</category>
+                                    <category domain="https://mitirrli.github.io/categories/c/">c</category>
                                 
                             
                         
@@ -180,79 +180,13 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/c/">c</category>
-                                
-                            
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>Php 垃圾回收机制</title>
-                <link>https://mitirrli.github.io/blog/php/gc/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/gc/</guid>
-                <pubDate>Fri, 23 Oct 2020 21:29:05 &#43;0800</pubDate>
-                
-                    <author>phper.blue@gmail.com (mitirrli)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
-                
-                    <description>&lt;blockquote&gt;
-&lt;p&gt;Garbage Collector 简称 GC&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;关于引用计数&#34;&gt;关于引用计数&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
-
-&lt;span class=&#34;nv&#34;&gt;$a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;new string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;nv&#34;&gt;$b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;nx&#34;&gt;xdebug_debug_zval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;// a: (interned, is_ref=0)=&amp;#39;new string&amp;#39;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-                
-                
-                
-                
-                
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
-                                
-                            
-                        
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/c/">c</category>
                                 
                             
                         
@@ -262,8 +196,8 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
         
             <item>
                 <title>PHP-FPM 是啥</title>
-                <link>https://mitirrli.github.io/blog/php/php-fpm-union/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/php-fpm-union/</guid>
+                <link>https://mitirrli.github.io/php/php-fpm-union/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/php-fpm-union/</guid>
                 <pubDate>Tue, 06 Oct 2020 12:49:27 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -971,7 +905,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -981,25 +915,25 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php-fpm/">php-fpm</category>
+                                    <category domain="https://mitirrli.github.io/tags/php-fpm/">php-fpm</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/nginx/">nginx</category>
+                                    <category domain="https://mitirrli.github.io/tags/nginx/">nginx</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/docker/">docker</category>
+                                    <category domain="https://mitirrli.github.io/tags/docker/">docker</category>
                                 
                             
                         
@@ -1009,8 +943,8 @@ rlimit_core = 0
         
             <item>
                 <title>Clean code</title>
-                <link>https://mitirrli.github.io/blog/php/tips/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/tips/</guid>
+                <link>https://mitirrli.github.io/php/tips/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/tips/</guid>
                 <pubDate>Thu, 01 Oct 2020 11:30:54 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1355,7 +1289,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -1365,178 +1299,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
-                                
-                            
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>使用Symfony Console</title>
-                <link>https://mitirrli.github.io/blog/php/symfony-console/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/symfony-console/</guid>
-                <pubDate>Sun, 10 May 2020 09:27:23 &#43;0800</pubDate>
-                
-                    <author>phper.blue@gmail.com (mitirrli)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
-                
-                    <description>&lt;h4 id=&#34;使用composer安装&#34;&gt;使用composer安装&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ composer require symfony/console
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;增加artisan文件&#34;&gt;增加artisan文件&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#!/usr/bin/env php
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
- 
-&lt;span class=&#34;k&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;__DIR__&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/vendor/autoload.php&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
- 
-&lt;span class=&#34;k&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Symfony\Component\Console\Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;nv&#34;&gt;$application&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-
-&lt;span class=&#34;nv&#34;&gt;$commands&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;glob&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;__DIR__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/app/command/*.php&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;foreach&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$commands&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nv&#34;&gt;$bool&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/(app\/command\/.+?)\.php/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$matches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$bool&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!==&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$matches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nv&#34;&gt;$command&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str_replace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;\\&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$matches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
-        &lt;span class=&#34;nv&#34;&gt;$application&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
- 
-&lt;span class=&#34;nv&#34;&gt;$application&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;时间戳转化命令&#34;&gt;时间戳转化命令&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app\command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Symfony\Component\Console\Command\Command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Symfony\Component\Console\Input\InputInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Symfony\Component\Console\Output\OutputInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Symfony\Component\Console\Input\InputArgument&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;TimestampConvertCommand&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Command&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;configure&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nv&#34;&gt;$this&lt;/span&gt;
-            &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;addArgument&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;time&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;InputArgument&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;OPTIONAL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;The timestamp to be converted.&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-            &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;time:convert&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-            &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setDescription&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;时间戳转换.&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-            &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setHelp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;The timestamp to be converted...&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;execute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;InputInterface&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;OutputInterface&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$output&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nv&#34;&gt;$time&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$input&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getArgument&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;time&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;??&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-
-        &lt;span class=&#34;nv&#34;&gt;$output&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;You are about to &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;nv&#34;&gt;$output&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;convert time. &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;nv&#34;&gt;$output&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;writeln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;时间: &amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Y-m-d H:i:s&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-        
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-                
-                
-                
-                
-                
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
-                                
-                            
-                        
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://mitirrli.github.io/blog/tags/symfony/">symfony</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://mitirrli.github.io/blog/tags/console/">console</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                         
@@ -1546,8 +1309,8 @@ rlimit_core = 0
         
             <item>
                 <title>Composer Git Hooks</title>
-                <link>https://mitirrli.github.io/blog/php/composer-git-hooks/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/composer-git-hooks/</guid>
+                <link>https://mitirrli.github.io/php/composer-git-hooks/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/composer-git-hooks/</guid>
                 <pubDate>Thu, 28 Nov 2019 15:00:45 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1613,7 +1376,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -1623,19 +1386,19 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/git/">git</category>
+                                    <category domain="https://mitirrli.github.io/tags/git/">git</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/composer/">composer</category>
+                                    <category domain="https://mitirrli.github.io/tags/composer/">composer</category>
                                 
                             
                         
@@ -1645,8 +1408,8 @@ rlimit_core = 0
         
             <item>
                 <title>Composer 组件化开发</title>
-                <link>https://mitirrli.github.io/blog/php/composer-component/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/composer-component/</guid>
+                <link>https://mitirrli.github.io/php/composer-component/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/composer-component/</guid>
                 <pubDate>Thu, 03 Oct 2019 12:33:27 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1893,7 +1656,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -1903,25 +1666,25 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/composer/">composer</category>
+                                    <category domain="https://mitirrli.github.io/tags/composer/">composer</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">组件化开发</category>
+                                    <category domain="https://mitirrli.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">组件化开发</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/gitlab/">gitlab</category>
+                                    <category domain="https://mitirrli.github.io/tags/gitlab/">gitlab</category>
                                 
                             
                         
@@ -1931,8 +1694,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         
             <item>
                 <title>Php 部分时间函数</title>
-                <link>https://mitirrli.github.io/blog/php/time/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/time/</guid>
+                <link>https://mitirrli.github.io/php/time/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/time/</guid>
                 <pubDate>Tue, 17 Sep 2019 20:47:37 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -2216,7 +1979,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -2226,7 +1989,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                         
@@ -2236,8 +1999,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         
             <item>
                 <title>闭包和匿名函数</title>
-                <link>https://mitirrli.github.io/blog/php/closure/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/closure/</guid>
+                <link>https://mitirrli.github.io/php/closure/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/closure/</guid>
                 <pubDate>Thu, 02 May 2019 20:38:11 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -2385,7 +2148,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -2395,13 +2158,13 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/closure/">closure</category>
+                                    <category domain="https://mitirrli.github.io/tags/closure/">closure</category>
                                 
                             
                         
@@ -2411,8 +2174,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         
             <item>
                 <title>Php Command Script</title>
-                <link>https://mitirrli.github.io/blog/php/script/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/script/</guid>
+                <link>https://mitirrli.github.io/php/script/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/php/script/</guid>
                 <pubDate>Mon, 08 Oct 2018 10:20:58 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -2551,7 +2314,7 @@ $ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_li
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
                                 
                             
                         
@@ -2561,7 +2324,7 @@ $ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_li
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
                                 
                             
                         
