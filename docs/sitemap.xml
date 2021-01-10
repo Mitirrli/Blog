@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mitirrli.github.io/blog/categories/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/categories/php/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/react-php/</loc>
+    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/react-php/</loc>
+    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/blog/tags/c/</loc>
     <lastmod>2020-12-06T07:47:45+08:00</lastmod>
   </url>
@@ -13,28 +48,8 @@
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/blog/categories/</loc>
-    <lastmod>2020-12-19T21:43:40+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/</loc>
-    <lastmod>2020-12-19T21:43:40+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/php/</loc>
-    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mitirrli.github.io/blog/tags/php/</loc>
     <lastmod>2020-12-14T22:46:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/tags/</loc>
-    <lastmod>2020-12-19T21:43:40+08:00</lastmod>
   </url>
   
   <url>
@@ -65,11 +80,6 @@
   <url>
     <loc>https://mitirrli.github.io/blog/chrome/vimium/</loc>
     <lastmod>2020-11-06T09:22:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/blog/categories/php/</loc>
-    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
@@ -240,6 +250,21 @@
   <url>
     <loc>https://mitirrli.github.io/blog/elasticsearch/page/</loc>
     <lastmod>2020-10-27T17:18:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/console/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/tags/symfony/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/blog/php/symfony-console/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
   </url>
   
   <url>
