@@ -4,22 +4,22 @@
   
   <url>
     <loc>https://mitirrli.github.io/categories/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/php/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/categories/php/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
   </url>
   
   <url>
@@ -34,22 +34,22 @@
   
   <url>
     <loc>https://mitirrli.github.io/tags/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/c/</loc>
-    <lastmod>2020-11-07T16:58:08+08:00</lastmod>
+    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/categories/c/</loc>
-    <lastmod>2020-11-07T16:58:08+08:00</lastmod>
+    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/php/</loc>
-    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
@@ -80,6 +80,11 @@
   <url>
     <loc>https://mitirrli.github.io/chrome/vimium/</loc>
     <lastmod>2020-11-06T09:22:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/php/gc/</loc>
+    <lastmod>2020-11-08T20:55:39+08:00</lastmod>
   </url>
   
   <url>
@@ -149,17 +154,17 @@
   
   <url>
     <loc>https://mitirrli.github.io/elasticsearch/</loc>
-    <lastmod>2020-10-27T17:18:02+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/elasticsearch/</loc>
-    <lastmod>2020-10-27T17:18:02+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/categories/elasticsearch/</loc>
-    <lastmod>2020-10-27T17:18:02+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
@@ -214,7 +219,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/categories/git/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2020-11-03T20:18:57+08:00</lastmod>
   </url>
   
   <url>
@@ -224,7 +229,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/tags/gitlab/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
   </url>
   
   <url>
@@ -239,12 +244,27 @@
   
   <url>
     <loc>https://mitirrli.github.io/elasticsearch/search-operation/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2021-02-02T21:28:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/elasticsearch/page/</loc>
     <lastmod>2020-10-27T17:18:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/tags/console/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/tags/symfony/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/php/symfony-console/</loc>
+    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
   </url>
   
   <url>
@@ -270,6 +290,26 @@
   <url>
     <loc>https://mitirrli.github.io/regex/usage/</loc>
     <lastmod>2020-11-16T23:33:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/machine-learning/</loc>
+    <lastmod>2021-01-17T14:42:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/categories/machine-learning/</loc>
+    <lastmod>2021-01-17T14:42:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/tags/predictionio/</loc>
+    <lastmod>2021-01-17T14:42:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/machine-learning/predictionio/</loc>
+    <lastmod>2021-01-17T14:42:54+08:00</lastmod>
   </url>
   
   <url>
@@ -328,6 +368,26 @@
   </url>
   
   <url>
+    <loc>https://mitirrli.github.io/jenkins/</loc>
+    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/tags/jenkins/</loc>
+    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/categories/jenkins/</loc>
+    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/jenkins/record/</loc>
+    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/php/composer-component/</loc>
     <lastmod>2020-10-24T18:11:06+08:00</lastmod>
   </url>
@@ -339,7 +399,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/git/</loc>
-    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
+    <lastmod>2020-11-03T20:18:57+08:00</lastmod>
   </url>
   
   <url>
@@ -413,6 +473,16 @@
   </url>
   
   <url>
+    <loc>https://mitirrli.github.io/linux/vim/</loc>
+    <lastmod>2020-10-27T21:08:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/git/usage/</loc>
+    <lastmod>2020-11-03T20:18:57+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mitirrli.github.io/aliyun/</loc>
     <lastmod>2020-12-06T09:23:59+08:00</lastmod>
   </url>
@@ -440,6 +510,21 @@
   <url>
     <loc>https://mitirrli.github.io/aliyun/oss-permission/</loc>
     <lastmod>2020-12-06T09:23:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/c&#43;&#43;/basic-usage/</loc>
+    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/c&#43;&#43;/</loc>
+    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/tags/c-/</loc>
+    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
   </url>
   
   <url>
