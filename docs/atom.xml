@@ -4,10 +4,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-07-26T21:46:56&#43;08:00</updated>
-    <id>https://mitirrli.github.io/</id>
-    <link rel="alternate" type="text/html" href="https://mitirrli.github.io/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/atom.xml" />
+    <updated>2021-07-26T21:58:52&#43;08:00</updated>
+    <id>https://mitirrli.github.io/blog/</id>
+    <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
     <author>
             <name>mitirrli</name>
             <uri>https://mitirrli.github.io/</uri>
@@ -18,13 +18,13 @@
     <generator uri="https://gohugo.io/" version="0.78.0">Hugo</generator>
         <entry>
             <title type="text">编译 PHP &amp;&amp; 构建 c 扩展</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/compile/" />
-            <id>https://mitirrli.github.io/php/compile/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/compile/" />
+            <id>https://mitirrli.github.io/blog/php/compile/</id>
             <updated>2020-11-07T16:58:08&#43;08:00</updated>
             <published>2020-11-07T16:00:52&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 下载最新版的 php $ axel -n 6 https://github.com/php/php-src/archive/php-8.0.0RC3.tar.gz //axel是一个多线程下载工具,大大提升了下载速度 2. 编译 php $ ./buildconf &amp;amp;&amp;amp; ./configure --prefix=[PATH] --with-iconv=$(brew --prefix libiconv) $ make $ make install 3.</summary>
@@ -92,7 +92,7 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/c/" term="c" label="c" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/c/" term="c" label="c" />
                             
                         
                     
@@ -102,13 +102,13 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/c/" term="c" label="c" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/c/" term="c" label="c" />
                             
                         
                     
@@ -118,13 +118,13 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
     
         <entry>
             <title type="text">PHP-FPM 是啥</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/php-fpm-union/" />
-            <id>https://mitirrli.github.io/php/php-fpm-union/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm-union/" />
+            <id>https://mitirrli.github.io/blog/php/php-fpm-union/</id>
             <updated>2020-11-29T10:25:41&#43;08:00</updated>
             <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Part 1. PHP FPM 和 NGINX  nginx 本身不能处理 php,当收到请求后,如果是 php 请求,在本文中,他将请求发送给 fastcgi 管理进程处理,fastcgi 管理进程会选择子进程处理完返回结果给 nginx
@@ -831,7 +831,7 @@ rlimit_core = 0
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -841,25 +841,25 @@ rlimit_core = 0
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php-fpm/" term="php-fpm" label="php-fpm" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php-fpm/" term="php-fpm" label="php-fpm" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/nginx/" term="nginx" label="nginx" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/nginx/" term="nginx" label="nginx" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/docker/" term="docker" label="docker" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/docker/" term="docker" label="docker" />
                             
                         
                     
@@ -869,13 +869,13 @@ rlimit_core = 0
     
         <entry>
             <title type="text">Clean code</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/tips/" />
-            <id>https://mitirrli.github.io/php/tips/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/tips/" />
+            <id>https://mitirrli.github.io/blog/php/tips/</id>
             <updated>2020-11-15T21:09:24&#43;08:00</updated>
             <published>2020-10-01T11:30:54&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 合并所有元素(使用数组解包) 1 2 3 4 5 6 7  &amp;lt;?php $a = 1; $b = [2, 3]; var_dump(array_merge([$a], $b));//php7.4前  var_dump([$a, .</summary>
@@ -1218,7 +1218,7 @@ rlimit_core = 0
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -1228,7 +1228,7 @@ rlimit_core = 0
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                     
@@ -1238,13 +1238,13 @@ rlimit_core = 0
     
         <entry>
             <title type="text">Composer Git Hooks</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/composer-git-hooks/" />
-            <id>https://mitirrli.github.io/php/composer-git-hooks/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/composer-git-hooks/" />
+            <id>https://mitirrli.github.io/blog/php/composer-git-hooks/</id>
             <updated>2020-11-28T17:58:02&#43;08:00</updated>
             <published>2019-11-28T15:00:45&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 关于 Git Hooks  和其它版本控制系统一样，Git 能在特定的重要动作发生时触发自定义脚本。 有两组这样的钩子：客户端的和服务器端的。 客户端钩子由诸如提交和合并这样的操作所调用，而服务器端钩子作用于诸如接收被推送的提交这样的联网操作。 你可以随心所欲地运用这些钩子。
@@ -1309,7 +1309,7 @@ rlimit_core = 0
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -1319,19 +1319,19 @@ rlimit_core = 0
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/git/" term="git" label="git" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/git/" term="git" label="git" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/composer/" term="composer" label="composer" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/composer/" term="composer" label="composer" />
                             
                         
                     
@@ -1341,13 +1341,13 @@ rlimit_core = 0
     
         <entry>
             <title type="text">Composer 组件化开发</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/composer-component/" />
-            <id>https://mitirrli.github.io/php/composer-component/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/composer-component/" />
+            <id>https://mitirrli.github.io/blog/php/composer-component/</id>
             <updated>2020-10-24T18:11:06&#43;08:00</updated>
             <published>2019-10-03T12:33:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">本地调试组件 1. 目录结构 在项目根目录创建一个packagist包，用来放置组件包，加入到.gitignore文件中。通过path的方式，让composer将test组件作为依赖加载到project中 1 2 3 4 5 6 7 8 9  . ├── packagist │ └── test │ └── src └── project ├── app ├── config ├── runtime └── vendor   2.</summary>
@@ -1592,7 +1592,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -1602,25 +1602,25 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/composer/" term="composer" label="composer" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/composer/" term="composer" label="composer" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" term="组件化开发" label="组件化开发" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" term="组件化开发" label="组件化开发" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/gitlab/" term="gitlab" label="gitlab" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/gitlab/" term="gitlab" label="gitlab" />
                             
                         
                     
@@ -1630,13 +1630,13 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
     
         <entry>
             <title type="text">Php 部分时间函数</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/time/" />
-            <id>https://mitirrli.github.io/php/time/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/time/" />
+            <id>https://mitirrli.github.io/blog/php/time/</id>
             <updated>2020-10-24T18:11:06&#43;08:00</updated>
             <published>2019-09-17T20:47:37&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. 设置时区  date_default_timezone_set — 设定用于一个脚本中所有日期时间函数的默认时区
@@ -1919,7 +1919,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -1929,7 +1929,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                     
@@ -1939,13 +1939,13 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
     
         <entry>
             <title type="text">闭包和匿名函数</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/closure/" />
-            <id>https://mitirrli.github.io/php/closure/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/closure/" />
+            <id>https://mitirrli.github.io/blog/php/closure/</id>
             <updated>2020-12-14T22:46:12&#43;08:00</updated>
             <published>2019-05-02T20:38:11&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">定义: 匿名函数就是没有名称的函数，匿名函数可以赋值给变量。
@@ -2092,7 +2092,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -2102,13 +2102,13 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/closure/" term="closure" label="closure" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/closure/" term="closure" label="closure" />
                             
                         
                     
@@ -2118,13 +2118,13 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
     
         <entry>
             <title type="text">Php Command Script</title>
-            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/php/script/" />
-            <id>https://mitirrli.github.io/php/script/</id>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/script/" />
+            <id>https://mitirrli.github.io/blog/php/script/</id>
             <updated>2020-10-08T19:37:31&#43;08:00</updated>
             <published>2018-10-08T10:20:58&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
-                    <uri>https://mitirrli.github.io/</uri>
+                    <uri>https://mitirrli.github.io/blog/</uri>
                     <email>phper.blue@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">有用的php命令行命令 1. 查看当前已安装的扩展 1  $ php -m   2. 查看当前php版本 1  $ php -v   3. 查看扩展版本 1  $ php --ri 扩展名   4.</summary>
@@ -2261,7 +2261,7 @@ $ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_li
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/categories/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
                             
                         
                     
@@ -2271,7 +2271,7 @@ $ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_li
                             
                             
                             
-                                <category scheme="https://mitirrli.github.io/tags/php/" term="php" label="php" />
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
                             
                         
                     

@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Mitirrli</title>
-        <link>https://mitirrli.github.io/</link>
+        <link>https://mitirrli.github.io/blog/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.78.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 26 Jul 2021 21:46:56 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 26 Jul 2021 21:58:52 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://mitirrli.github.io/blog/rss.xml" />
         
         
             <item>
                 <title>编译 PHP &amp;&amp; 构建 c 扩展</title>
-                <link>https://mitirrli.github.io/php/compile/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/compile/</guid>
+                <link>https://mitirrli.github.io/blog/php/compile/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/compile/</guid>
                 <pubDate>Sat, 07 Nov 2020 16:00:52 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -101,7 +101,7 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/c/">c</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/c/">c</category>
                                 
                             
                         
@@ -111,13 +111,13 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/c/">c</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/c/">c</category>
                                 
                             
                         
@@ -127,8 +127,8 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
         
             <item>
                 <title>PHP-FPM 是啥</title>
-                <link>https://mitirrli.github.io/php/php-fpm-union/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/php-fpm-union/</guid>
+                <link>https://mitirrli.github.io/blog/php/php-fpm-union/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/php-fpm-union/</guid>
                 <pubDate>Tue, 06 Oct 2020 12:49:27 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -836,7 +836,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -846,25 +846,25 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php-fpm/">php-fpm</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php-fpm/">php-fpm</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/nginx/">nginx</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/nginx/">nginx</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/docker/">docker</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/docker/">docker</category>
                                 
                             
                         
@@ -874,8 +874,8 @@ rlimit_core = 0
         
             <item>
                 <title>Clean code</title>
-                <link>https://mitirrli.github.io/php/tips/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/tips/</guid>
+                <link>https://mitirrli.github.io/blog/php/tips/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/tips/</guid>
                 <pubDate>Thu, 01 Oct 2020 11:30:54 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1220,7 +1220,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -1230,7 +1230,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                         
@@ -1240,8 +1240,8 @@ rlimit_core = 0
         
             <item>
                 <title>Composer Git Hooks</title>
-                <link>https://mitirrli.github.io/php/composer-git-hooks/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/composer-git-hooks/</guid>
+                <link>https://mitirrli.github.io/blog/php/composer-git-hooks/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/composer-git-hooks/</guid>
                 <pubDate>Thu, 28 Nov 2019 15:00:45 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1307,7 +1307,7 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -1317,19 +1317,19 @@ rlimit_core = 0
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/git/">git</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/git/">git</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/composer/">composer</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/composer/">composer</category>
                                 
                             
                         
@@ -1339,8 +1339,8 @@ rlimit_core = 0
         
             <item>
                 <title>Composer 组件化开发</title>
-                <link>https://mitirrli.github.io/php/composer-component/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/composer-component/</guid>
+                <link>https://mitirrli.github.io/blog/php/composer-component/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/composer-component/</guid>
                 <pubDate>Thu, 03 Oct 2019 12:33:27 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1587,7 +1587,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -1597,25 +1597,25 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/composer/">composer</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/composer/">composer</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">组件化开发</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">组件化开发</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/gitlab/">gitlab</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/gitlab/">gitlab</category>
                                 
                             
                         
@@ -1625,8 +1625,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         
             <item>
                 <title>Php 部分时间函数</title>
-                <link>https://mitirrli.github.io/php/time/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/time/</guid>
+                <link>https://mitirrli.github.io/blog/php/time/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/time/</guid>
                 <pubDate>Tue, 17 Sep 2019 20:47:37 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -1910,7 +1910,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -1920,7 +1920,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                         
@@ -1930,8 +1930,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         
             <item>
                 <title>闭包和匿名函数</title>
-                <link>https://mitirrli.github.io/php/closure/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/closure/</guid>
+                <link>https://mitirrli.github.io/blog/php/closure/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/closure/</guid>
                 <pubDate>Thu, 02 May 2019 20:38:11 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -2079,7 +2079,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -2089,13 +2089,13 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/closure/">closure</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/closure/">closure</category>
                                 
                             
                         
@@ -2105,8 +2105,8 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         
             <item>
                 <title>Php Command Script</title>
-                <link>https://mitirrli.github.io/php/script/</link>
-                <guid isPermaLink="true">https://mitirrli.github.io/php/script/</guid>
+                <link>https://mitirrli.github.io/blog/php/script/</link>
+                <guid isPermaLink="true">https://mitirrli.github.io/blog/php/script/</guid>
                 <pubDate>Mon, 08 Oct 2018 10:20:58 &#43;0800</pubDate>
                 
                     <author>phper.blue@gmail.com (mitirrli)</author>
@@ -2245,7 +2245,7 @@ $ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_li
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/categories/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/categories/php/">php</category>
                                 
                             
                         
@@ -2255,7 +2255,7 @@ $ php -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;echo ini_get(&amp;#39;memory_li
                                 
                                 
                                 
-                                    <category domain="https://mitirrli.github.io/tags/php/">php</category>
+                                    <category domain="https://mitirrli.github.io/blog/tags/php/">php</category>
                                 
                             
                         
