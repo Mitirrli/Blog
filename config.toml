@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://mitirrli.github.io/"
+baseURL = "https://mitirrli.github.io/blog/"
 hasCJKLanguage = false
 languageCode = "en"
 title = "Mitirrli"
