@@ -4,77 +4,52 @@
   
   <url>
     <loc>https://mitirrli.github.io/categories/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/tags/docker/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
+    <loc>https://mitirrli.github.io/hugo/</loc>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/machine-learning/predictionio/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
+    <loc>https://mitirrli.github.io/tags/hugo/</loc>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/machine-learning/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/categories/machine-learning/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
+    <loc>https://mitirrli.github.io/categories/hugo/</loc>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/predictionio/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/tags/universal-recommender/</loc>
-    <lastmod>2021-03-05T23:01:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/php/</loc>
-    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/categories/php/</loc>
-    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/php/react-php/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/react-php/</loc>
-    <lastmod>2020-12-26T16:17:25+08:00</lastmod>
+    <loc>https://mitirrli.github.io/hugo/use/</loc>
+    <lastmod>2021-07-26T08:00:20+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/c/</loc>
-    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
+    <lastmod>2020-11-07T16:58:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/categories/c/</loc>
-    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
+    <lastmod>2020-11-07T16:58:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/php/</loc>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
@@ -113,28 +88,18 @@
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/php/gc/</loc>
-    <lastmod>2020-11-08T20:55:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/elasticsearch/</loc>
-    <lastmod>2021-02-22T13:40:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/elasticsearch/</loc>
-    <lastmod>2021-02-22T13:40:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/categories/elasticsearch/</loc>
-    <lastmod>2021-02-22T13:40:08+08:00</lastmod>
+    <loc>https://mitirrli.github.io/tags/docker/</loc>
+    <lastmod>2020-11-29T10:28:41+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/nginx/</loc>
     <lastmod>2020-11-29T10:25:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mitirrli.github.io/categories/php/</loc>
+    <lastmod>2020-12-14T22:46:12+08:00</lastmod>
   </url>
   
   <url>
@@ -194,17 +159,17 @@
   
   <url>
     <loc>https://mitirrli.github.io/mysql/</loc>
-    <lastmod>2021-03-01T20:33:03+08:00</lastmod>
+    <lastmod>2020-11-25T21:17:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/tags/mysql/</loc>
-    <lastmod>2021-03-01T20:33:03+08:00</lastmod>
+    <lastmod>2020-11-25T21:17:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/categories/mysql/</loc>
-    <lastmod>2021-03-01T20:33:03+08:00</lastmod>
+    <lastmod>2020-11-25T21:17:42+08:00</lastmod>
   </url>
   
   <url>
@@ -234,7 +199,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/categories/git/</loc>
-    <lastmod>2020-11-03T20:18:57+08:00</lastmod>
+    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
   </url>
   
   <url>
@@ -244,7 +209,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/tags/gitlab/</loc>
-    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
+    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
   </url>
   
   <url>
@@ -255,21 +220,6 @@
   <url>
     <loc>https://mitirrli.github.io/docker/php-environment-build/</loc>
     <lastmod>2020-11-29T10:28:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/console/</loc>
-    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/symfony/</loc>
-    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/php/symfony-console/</loc>
-    <lastmod>2021-01-10T14:04:57+08:00</lastmod>
   </url>
   
   <url>
@@ -324,7 +274,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/computer/</loc>
-    <lastmod>2021-02-24T19:11:45+08:00</lastmod>
+    <lastmod>2020-12-06T18:14:08+08:00</lastmod>
   </url>
   
   <url>
@@ -344,32 +294,12 @@
   
   <url>
     <loc>https://mitirrli.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-02-24T19:11:45+08:00</lastmod>
+    <lastmod>2020-12-06T18:14:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mitirrli.github.io/computer/nonu/</loc>
     <lastmod>2020-12-06T07:38:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/jenkins/</loc>
-    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/jenkins/</loc>
-    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/categories/jenkins/</loc>
-    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/jenkins/record/</loc>
-    <lastmod>2021-01-17T10:17:28+08:00</lastmod>
   </url>
   
   <url>
@@ -384,7 +314,7 @@
   
   <url>
     <loc>https://mitirrli.github.io/git/</loc>
-    <lastmod>2020-11-03T20:18:57+08:00</lastmod>
+    <lastmod>2020-10-24T18:11:06+08:00</lastmod>
   </url>
   
   <url>
@@ -458,21 +388,6 @@
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/linux/vim/</loc>
-    <lastmod>2020-10-27T21:08:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/mysql/function/</loc>
-    <lastmod>2021-03-01T20:33:03+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/git/usage/</loc>
-    <lastmod>2020-11-03T20:18:57+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mitirrli.github.io/aliyun/</loc>
     <lastmod>2020-12-06T09:23:59+08:00</lastmod>
   </url>
@@ -503,21 +418,6 @@
   </url>
   
   <url>
-    <loc>https://mitirrli.github.io/c&#43;&#43;/basic-usage/</loc>
-    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/c&#43;&#43;/</loc>
-    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/c-/</loc>
-    <lastmod>2020-12-06T07:47:45+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mitirrli.github.io/tags/zsh/</loc>
     <lastmod>2020-11-29T10:22:20+08:00</lastmod>
   </url>
@@ -525,21 +425,6 @@
   <url>
     <loc>https://mitirrli.github.io/linux/zsh/</loc>
     <lastmod>2020-11-29T10:22:20+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</loc>
-    <lastmod>2021-02-24T19:11:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
-    <lastmod>2021-02-24T19:11:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mitirrli.github.io/computer/tree/</loc>
-    <lastmod>2021-02-24T19:11:45+08:00</lastmod>
   </url>
   
   <url>
