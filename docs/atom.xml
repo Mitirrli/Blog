@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Mitirrli</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-07-30T07:28:59&#43;08:00</updated>
+    <updated>2021-08-01T06:50:48&#43;08:00</updated>
     <id>https://mitirrli.github.io/blog/</id>
     <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mitirrli.github.io/blog/atom.xml" />
@@ -16,6 +16,89 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.78.0">Hugo</generator>
+        <entry>
+            <title type="text">PHP 数组引用的坑</title>
+            <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/array_quote/" />
+            <id>https://mitirrli.github.io/blog/php/array_quote/</id>
+            <updated>2021-07-31T06:59:43&#43;08:00</updated>
+            <published>2021-07-30T23:06:54&#43;08:00</published>
+            <author>
+                    <name>mitirrli</name>
+                    <uri>https://mitirrli.github.io/blog/</uri>
+                    <email>phper.blue@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">foreach (&amp;amp;) 会在遍历结束后, 保留最后一项的引用关系, 最终导致被引用数组的最后一项发生改变.
+ 1 2 3 4 5 6 7 8 9 10 11 12  &amp;lt;?</summary>
+            
+                <content type="html">&lt;blockquote&gt;
+&lt;p&gt;foreach (&amp;amp;) 会在遍历结束后, 保留最后一项的引用关系, 最终导致被引用数组的最后一项发生改变.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+    &lt;span class=&#34;nv&#34;&gt;$data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;foreach&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$data&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;print_r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;foreach&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$data&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+        &lt;span class=&#34;c1&#34;&gt;//0 =&amp;gt; 2  1 =&amp;gt; 4  2 =&amp;gt; 6  3 =&amp;gt; 6
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$key&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; to &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;$value&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;为什么data3--6&#34;&gt;为什么$data[3] = 6&lt;/h3&gt;
+&lt;p&gt;在第二次foreach的时候, data轮流赋值给value, 而同时也修改着$data[3].&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$value= $a1[0]=2, 此时$a1[3] = 2;
+$value= $a1[1]=4, 此时$a1[3] = 4;
+$value= $a1[2]=6, 此时$a1[3] = 6;
+$value= $a1[3]=6, 此时$a1[3] = 6;
+&lt;/code&gt;&lt;/pre&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/categories/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mitirrli.github.io/blog/tags/php/" term="php" label="php" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">编译 PHP &amp;&amp; 构建 c 扩展</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/compile/" />
@@ -117,10 +200,10 @@ $ ../../output/bin/php -r &amp;quot;echo test2();&amp;quot;
         </entry>
     
         <entry>
-            <title type="text">PHP-FPM 是啥</title>
+            <title type="text">PHP-FPM是啥</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/php-fpm-union/" />
             <id>https://mitirrli.github.io/blog/php/php-fpm-union/</id>
-            <updated>2020-11-29T10:25:41&#43;08:00</updated>
+            <updated>2021-07-31T06:59:04&#43;08:00</updated>
             <published>2020-10-06T12:49:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -1340,10 +1423,10 @@ rlimit_core = 0
         </entry>
     
         <entry>
-            <title type="text">Composer 组件化开发</title>
+            <title type="text">Composer组件化开发</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/composer-component/" />
             <id>https://mitirrli.github.io/blog/php/composer-component/</id>
-            <updated>2020-10-24T18:11:06&#43;08:00</updated>
+            <updated>2021-07-31T06:58:56&#43;08:00</updated>
             <published>2019-10-03T12:33:27&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -1629,10 +1712,10 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         </entry>
     
         <entry>
-            <title type="text">Php 部分时间函数</title>
+            <title type="text">PHP 时间函数</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/time/" />
             <id>https://mitirrli.github.io/blog/php/time/</id>
-            <updated>2020-10-24T18:11:06&#43;08:00</updated>
+            <updated>2021-07-31T07:00:03&#43;08:00</updated>
             <published>2019-09-17T20:47:37&#43;08:00</published>
             <author>
                     <name>mitirrli</name>
@@ -2117,7 +2200,7 @@ $ git add . &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git co
         </entry>
     
         <entry>
-            <title type="text">Php Command Script</title>
+            <title type="text">PHP Command Script</title>
             <link rel="alternate" type="text/html" href="https://mitirrli.github.io/blog/php/script/" />
             <id>https://mitirrli.github.io/blog/php/script/</id>
             <updated>2020-10-08T19:37:31&#43;08:00</updated>
